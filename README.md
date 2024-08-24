@@ -7,3 +7,4 @@ current todo
   - make a sucsession system
   - migrate things to be static instead of just using a runner object
   - make a gui
+  - reduce the stuff I just bomb into ram, like seriously I need to stop that send help
