@@ -10,36 +10,40 @@ public class Main
     private static string style = "";
     private static string parameters = "";
     private static string standing = "";
-    private static string[] parts;
-    static Enums myRunner;
+    private static string[] parts = Array.Empty<string>();
     private static Random rnd = new();
-
     private static int numParameters = 5;  // Can be modified as needed
+    private static Faction myFaction = null!;
 
     public static void DoCode()
     {
         Console.Write($"Please enter the parameters ({numParameters} values, separated by spaces): ");
-        string input = Console.ReadLine();
+        string? input = Console.ReadLine();
+
         if (string.IsNullOrWhiteSpace(input))
         {
             GenerateRandomValues();
         }
         else
         {
-            if (!CheckString(input)) { Environment.Exit(0); }
+            if (!CheckString(input))
+            {
+                Environment.Exit(0);
+            }
             parts = input.Split(' ');
             FillMissingParts(parts);
         }
 
-        int[] InParameters = parts.Select(int.Parse).ToArray();
-        myRunner = new Enums(InParameters[0],InParameters[1],InParameters[2],InParameters[3],InParameters[4],InParameters[5]);
-        name = myRunner.GetName();
-        goals = myRunner.GetGoals();
-        domains = myRunner.GetDomains();
-        style = myRunner.GetStyle();
-        parameters = myRunner.GetParameters();
-        standing = myRunner.GetStandings();
-        
+        int[] inParameters = parts.Select(int.Parse).ToArray();
+        myFaction = new Faction(inParameters[0], inParameters[1], inParameters[2], inParameters[3], inParameters[4]);
+
+        name = myFaction.GetName();
+        goals = myFaction.GetGoals();
+        domains = myFaction.GetDomains();
+        style = myFaction.GetStyle();
+        parameters = myFaction.GetParameters();
+        standing = myFaction.GetStandings();
+
         Console.WriteLine(name);
         Console.WriteLine("Standing");
         Console.WriteLine(standing);
@@ -60,30 +64,36 @@ public class Main
         while (true)
         {
             Console.WriteLine("Enter your option (1-9, save, or don't save):");
-            string input = Console.ReadLine();
+            string? input = Console.ReadLine();
+
+            if (string.IsNullOrWhiteSpace(input))
+            {
+                Console.WriteLine("Invalid input. Please try again.");
+                continue;
+            }
 
             switch (input.ToLower())
             {
                 case "1" or "name":
-                    name = myRunner.GetName();
+                    name = myFaction.GetName();
                     break;
                 case "2" or "standing":
-                    standing = myRunner.GetStandings();
+                    standing = myFaction.GetStandings();
                     break;
                 case "3" or "goals":
-                    goals = myRunner.GetGoals();
+                    goals = myFaction.GetGoals();
                     break;
                 case "4" or "domains":
-                    domains = myRunner.GetDomains();
+                    domains = myFaction.GetDomains();
                     break;
                 case "5" or "style":
-                    style = myRunner.GetStyle();
+                    style = myFaction.GetStyle();
                     break;
                 case "6" or "parameters":
-                    parameters = myRunner.GetParameters();
+                    parameters = myFaction.GetParameters();
                     break;
                 case "9" or "everything":
-                    parameters = myRunner.GetParameters();
+                    parameters = myFaction.GetParameters();
                     break;
                 case "10" or "save":
                     SaveData();
@@ -135,8 +145,6 @@ public class Main
             }
         }
 
-        // Custom validation per input based on their position if needed
-        // Example validation: First four must be 0-100, last one must be 1-5
         bool isValid = parts.Take(4).All(v => int.Parse(v) >= 0 && int.Parse(v) <= 100)
                       && parts.Last() is { } lastValue && int.Parse(lastValue) >= 1 && int.Parse(lastValue) <= 5;
 
@@ -151,7 +159,7 @@ public class Main
     private static void GenerateRandomValues()
     {
         parts = new string[numParameters];
-        for (int i = 0; i < numParameters - 2; i++)
+        for (int i = 0; i < numParameters - 1; i++)
         {
             parts[i] = rnd.Next(0, 101).ToString();
         }

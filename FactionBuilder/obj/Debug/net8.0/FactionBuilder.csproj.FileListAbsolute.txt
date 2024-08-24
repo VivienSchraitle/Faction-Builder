@@ -26,3 +26,4 @@
 /home/vivien/DND/Faction Builder/FactionBuilder/obj/Debug/net8.0/FactionBuilder.pdb
 /home/vivien/DND/Faction Builder/FactionBuilder/obj/Debug/net8.0/FactionBuilder.genruntimeconfig.cache
 /home/vivien/DND/Faction Builder/FactionBuilder/obj/Debug/net8.0/ref/FactionBuilder.dll
+/home/vivien/DND/Faction Builder/FactionBuilder/obj/Debug/net8.0/FactionBuilder.sourcelink.json

@@ -7,7 +7,7 @@ namespace FactionBuilder
 {
     public class PersonNameGen
     {
-        enum gender
+        enum Gender
         {
             male,
             female,
