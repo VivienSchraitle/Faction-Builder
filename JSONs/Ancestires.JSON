@@ -1,24 +1,154 @@
 [
     {
-        "DefaultSkinColor": ["Pale White", "Ivory", "Warm Ivory", "Porcelain", "Pale Ivory", "Sienna", "Sand", "Beige", "Warm Beige", "Golden", "Honey", "Bronze", "Almond", "Mahogany", "Deep Brown", "Ebony"],
-        "DefaultUndertones": ["Warm Undertones", "Cool Undertones", "Neutral Undertones"],
-        "DefaultHairColor": ["Black", "Dark Brown", "Medium Brown", "Light Brown", "Chestnut", "Auburn", "Dark Blonde", "Strawberry Blonde", "Blonde", "Platinum Blonde", "Gray", "White", "Red", "Copper", "Silver"],
-        "DefaultHairstyles": ["Buzz Cut", "Crew Cut", "Undercut", "Pompadour", "Fade", "Afro", "Braids", "Cornrows", "Bob", "Pixie Cut", "Bun", "Ponytail", "Mohawk", "Shag", "Layered", "Curly", "Wavy", "Straight", "Updo", "Dreadlocks", "French Twist", "Chignon", "Side Part", "Top Knot", "Beach Waves", "Fringe", "Mullet", "Quiff", "Bowl Cut", "Faux Hawk", "Long Layers", "High and Tight", "Taper Cut", "Finger Waves", "Curtain Bangs", "Asymmetrical Bob", "Blunt Cut", "Pageboy", "Space Buns", "Victory Rolls", "Twists", "Flat Top", "Half-Up Half-Down", "Dutch Braids", "French Braid", "Fishtail Braid", "Box Braids", "Halo Braid", "Crown Braid", "Slicked Back", "Messy Bun", "Pigtails", "Top Fade", "Buzzed Mohawk", "Man Bun"],
-        "DefaultEyeColor": ["Brown", "Dark Brown", "Light Brown", "Hazel", "Amber", "Green", "Light Blue", "Dark Blue", "Gray", "Black"],
-        "AdjectiveSizes": ["Cut off", "Very Short", "Short", "Rather Short", "About Average", "Somewhat Long", "Long", "Very Long", "Massive", "Glorious"]
+        "DefaultSkinColor": [
+            "Pale White",
+            "Ivory",
+            "Warm Ivory",
+            "Porcelain",
+            "Pale Ivory",
+            "Sienna",
+            "Sand",
+            "Beige",
+            "Warm Beige",
+            "Golden",
+            "Honey",
+            "Bronze",
+            "Almond",
+            "Mahogany",
+            "Deep Brown",
+            "Ebony"
+        ],
+        "DefaultUndertones": [
+            "Warm Undertones",
+            "Cool Undertones",
+            "Neutral Undertones"
+        ],
+        "DefaultHairColor": [
+            "Black",
+            "Dark Brown",
+            "Medium Brown",
+            "Light Brown",
+            "Chestnut",
+            "Auburn",
+            "Dark Blonde",
+            "Strawberry Blonde",
+            "Blonde",
+            "Platinum Blonde",
+            "Gray",
+            "White",
+            "Red",
+            "Copper",
+            "Silver"
+        ],
+        "DefaultHairstyles": [
+            "Buzz Cut",
+            "Crew Cut",
+            "Undercut",
+            "Pompadour",
+            "Fade",
+            "Afro",
+            "Braids",
+            "Cornrows",
+            "Bob",
+            "Pixie Cut",
+            "Bun",
+            "Ponytail",
+            "Mohawk",
+            "Shag",
+            "Layered",
+            "Curly",
+            "Wavy",
+            "Straight",
+            "Updo",
+            "Dreadlocks",
+            "French Twist",
+            "Chignon",
+            "Side Part",
+            "Top Knot",
+            "Beach Waves",
+            "Fringe",
+            "Mullet",
+            "Quiff",
+            "Bowl Cut",
+            "Faux Hawk",
+            "Long Layers",
+            "High and Tight",
+            "Taper Cut",
+            "Finger Waves",
+            "Curtain Bangs",
+            "Asymmetrical Bob",
+            "Blunt Cut",
+            "Pageboy",
+            "Space Buns",
+            "Victory Rolls",
+            "Twists",
+            "Flat Top",
+            "Half-Up Half-Down",
+            "Dutch Braids",
+            "French Braid",
+            "Fishtail Braid",
+            "Box Braids",
+            "Halo Braid",
+            "Crown Braid",
+            "Slicked Back",
+            "Messy Bun",
+            "Pigtails",
+            "Top Fade",
+            "Buzzed Mohawk",
+            "Man Bun"
+        ],
+        "DefaultEyeColor": [
+            "Brown",
+            "Dark Brown",
+            "Light Brown",
+            "Hazel",
+            "Amber",
+            "Green",
+            "Light Blue",
+            "Dark Blue",
+            "Gray",
+            "Black"
+        ],
+        "AdjectiveSizes": [
+            "Cut off",
+            "Very Short",
+            "Short",
+            "Rather Short",
+            "About Average",
+            "Somewhat Long",
+            "Long",
+            "Very Long",
+            "Massive",
+            "Glorious"
+        ]
     },
     {
         "Name": "Human",
         "LH": 100,
         "SizeAvg": 4.3,
         "SizeDev": 2.0,
-        "SkinColor": ["default"],
-        "Undertones": ["default"],
-        "HairColor": ["default"],
-        "Hairstyles": ["default"],
-        "EyeColor": ["default"],
-        "OptionalSpecialTraits": [[]],
-        "CertainSpecialTraits": [[]],
+        "SkinColor": [
+            "default"
+        ],
+        "Undertones": [
+            "default"
+        ],
+        "HairColor": [
+            "default"
+        ],
+        "Hairstyles": [
+            "default"
+        ],
+        "EyeColor": [
+            "default"
+        ],
+        "OptionalSpecialTraits": [
+            []
+        ],
+        "CertainSpecialTraits": [
+            []
+        ],
+        "Heriatage": [],
         "MaxAge": 90,
         "MatureAge": 18
     },
@@ -27,13 +157,28 @@
         "LH": 100,
         "SizeAvg": 3.7,
         "SizeDev": 1.0,
-        "SkinColor": ["default"],
-        "Undertones": ["default"],
-        "HairColor": ["default"],
-        "Hairstyles": ["default"],
-        "EyeColor": ["default"],
-        "OptionalSpecialTraits": [[]],
-        "CertainSpecialTraits": [[]],
+        "SkinColor": [
+            "default"
+        ],
+        "Undertones": [
+            "default"
+        ],
+        "HairColor": [
+            "default"
+        ],
+        "Hairstyles": [
+            "default"
+        ],
+        "EyeColor": [
+            "default"
+        ],
+        "OptionalSpecialTraits": [
+            []
+        ],
+        "CertainSpecialTraits": [
+            []
+        ],
+        "Heriatage": [],
         "MaxAge": 350,
         "MatureAge": 25
     },
@@ -42,18 +187,60 @@
         "LH": 40,
         "SizeAvg": 5.4,
         "SizeDev": 2.0,
-        "SkinColor": ["default"],
-        "Undertones": ["default"],
-        "HairColor": ["default"],
-        "Hairstyles": ["default"],
-        "EyeColor": ["default"],
+        "SkinColor": [
+            "default"
+        ],
+        "Undertones": [
+            "default"
+        ],
+        "HairColor": [
+            "default"
+        ],
+        "Hairstyles": [
+            "default"
+        ],
+        "EyeColor": [
+            "Red",
+            "Orange",
+            "Yellow",
+            "Green",
+            "Blue",
+            "Purple",
+            "Pink",
+            "Teal",
+            "Turquoise",
+            "Crimson",
+            "Vermillion",
+            "Goldenrod",
+            "Lime Green",
+            "Azure",
+            "Violet",
+            "Magenta",
+            "Coral",
+            "Cerulean",
+            "Lavender",
+            "Ruby",
+            "Saffron",
+            "Chartreuse",
+            "Cobalt Blue",
+            "Amethyst",
+            "Fuchsia",
+            "Salmon",
+            "Sky Blue",
+            "Lilac"
+        ],
         "OptionalSpecialTraits": [
             []
         ],
         "CertainSpecialTraits": [
-            ["{AdjectiveSizes} pointy ears"]
-
+            [
+                "Wide and rounded eyes"
+            ],
+            [
+                "{AdjectiveSizes} sharply pointy ears"
+            ]
         ],
+        "Heriatage": [],
         "MaxAge": 600,
         "MatureAge": 50
     },
@@ -62,13 +249,28 @@
         "LH": 100,
         "SizeAvg": 3.0,
         "SizeDev": 0.4,
-        "SkinColor": ["default"],
-        "Undertones": ["default"],
-        "HairColor": ["default"],
-        "Hairstyles": ["default"],
-        "EyeColor": ["default"],
-        "OptionalSpecialTraits": [[]],
-        "CertainSpecialTraits": [[]],
+        "SkinColor": [
+            "default"
+        ],
+        "Undertones": [
+            "default"
+        ],
+        "HairColor": [
+            "default"
+        ],
+        "Hairstyles": [
+            "default"
+        ],
+        "EyeColor": [
+            "default"
+        ],
+        "OptionalSpecialTraits": [
+            []
+        ],
+        "CertainSpecialTraits": [
+            []
+        ],
+        "Heriatage": [],
         "MaxAge": 350,
         "MatureAge": 18
     },
@@ -77,13 +279,28 @@
         "LH": 20,
         "SizeAvg": 3.1,
         "SizeDev": 0.4,
-        "SkinColor": ["default"],
-        "Undertones": ["default"],
-        "HairColor": ["default"],
-        "Hairstyles": ["default"],
-        "EyeColor": ["default"],
-        "OptionalSpecialTraits": [[]],
-        "CertainSpecialTraits": [[]],
+        "SkinColor": [
+            "default"
+        ],
+        "Undertones": [
+            "default"
+        ],
+        "HairColor": [
+            "default"
+        ],
+        "Hairstyles": [
+            "default"
+        ],
+        "EyeColor": [
+            "default"
+        ],
+        "OptionalSpecialTraits": [
+            []
+        ],
+        "CertainSpecialTraits": [
+            []
+        ],
+        "Heriatage": [],
         "MaxAge": 60,
         "MatureAge": 5
     },
@@ -92,13 +309,28 @@
         "LH": 100,
         "SizeAvg": 2.7,
         "SizeDev": 0.7,
-        "SkinColor": ["default"],
-        "Undertones": ["default"],
-        "HairColor": ["default"],
-        "Hairstyles": ["default"],
-        "EyeColor": ["default"],
-        "OptionalSpecialTraits": [[]],
-        "CertainSpecialTraits": [[]],
+        "SkinColor": [
+            "default"
+        ],
+        "Undertones": [
+            "default"
+        ],
+        "HairColor": [
+            "default"
+        ],
+        "Hairstyles": [
+            "default"
+        ],
+        "EyeColor": [
+            "default"
+        ],
+        "OptionalSpecialTraits": [
+            []
+        ],
+        "CertainSpecialTraits": [
+            []
+        ],
+        "Heriatage": [],
         "MaxAge": 350,
         "MatureAge": 18
     },
@@ -107,13 +339,28 @@
         "LH": 50,
         "SizeAvg": 5.2,
         "SizeDev": 2.3,
-        "SkinColor": ["default"],
-        "Undertones": ["default"],
-        "HairColor": ["default"],
-        "Hairstyles": ["default"],
-        "EyeColor": ["default"],
-        "OptionalSpecialTraits": [[]],
-        "CertainSpecialTraits": [[]],
+        "SkinColor": [
+            "default"
+        ],
+        "Undertones": [
+            "default"
+        ],
+        "HairColor": [
+            "default"
+        ],
+        "Hairstyles": [
+            "default"
+        ],
+        "EyeColor": [
+            "default"
+        ],
+        "OptionalSpecialTraits": [
+            []
+        ],
+        "CertainSpecialTraits": [
+            []
+        ],
+        "Heriatage": [],
         "MaxAge": 100,
         "MatureAge": 17
     },
@@ -122,13 +369,28 @@
         "LH": 10,
         "SizeAvg": 2.5,
         "SizeDev": 1.0,
-        "SkinColor": ["default"],
-        "Undertones": ["default"],
-        "HairColor": ["default"],
-        "Hairstyles": ["default"],
-        "EyeColor": ["default"],
-        "OptionalSpecialTraits": [[]],
-        "CertainSpecialTraits": [[]],
+        "SkinColor": [
+            "default"
+        ],
+        "Undertones": [
+            "default"
+        ],
+        "HairColor": [
+            "default"
+        ],
+        "Hairstyles": [
+            "default"
+        ],
+        "EyeColor": [
+            "default"
+        ],
+        "OptionalSpecialTraits": [
+            []
+        ],
+        "CertainSpecialTraits": [
+            []
+        ],
+        "Heriatage": [],
         "MaxAge": 10000,
         "MatureAge": 0
     },
@@ -137,13 +399,28 @@
         "LH": 10,
         "SizeAvg": 4.3,
         "SizeDev": 2.0,
-        "SkinColor": ["default"],
-        "Undertones": ["default"],
-        "HairColor": ["default"],
-        "Hairstyles": ["default"],
-        "EyeColor": ["default"],
-        "OptionalSpecialTraits": [[]],
-        "CertainSpecialTraits": [[]],
+        "SkinColor": [
+            "default"
+        ],
+        "Undertones": [
+            "default"
+        ],
+        "HairColor": [
+            "default"
+        ],
+        "Hairstyles": [
+            "default"
+        ],
+        "EyeColor": [
+            "default"
+        ],
+        "OptionalSpecialTraits": [
+            []
+        ],
+        "CertainSpecialTraits": [
+            []
+        ],
+        "Heriatage": [],
         "MaxAge": 260,
         "MatureAge": 20
     },
@@ -152,17 +429,136 @@
         "LH": 5,
         "SizeAvg": 5.0,
         "SizeDev": 1.0,
-        "SkinColor": ["Pearlescent White", "Pinkish White", "Light Coral Pink", "Red", "Peach", "Pale Pink", "Blush Pink", "Light Greenish", "Seafoam Green", "Pale Olive", "Light Brown", "Sandy Brown", "Coral Brown", "Rose Beige", "Warm Beige", "Ivory"],
-        "Undertones": ["default"],
-        "HairColor": ["default"],
-        "Hairstyles": ["Single Dorsal Fin", "Double Dorsal Fins", "Side Fins", "Triple Fin Crest", "V-shaped Fin Ridge", "Scaled Ridge with Spikes", "Curved Ridge", "Jagged Ridge", "Smooth Ridge", "Webbed Fin Ridge", "Short Scaled Ridge", "Long Flowing Fin", "Frilled Side Fins", "Layered Scaled Ridge", "Banded Ridge", "Spiked Fin Crest", "Rippled Fin", "Segmented Ridge", "Fan-shaped Fin", "Crown-shaped Ridge", "Twisted Fin", "Horned Ridge", "Double Webbed Fins", "Scalloped Ridge", "Pinnate Fin", "Interlocking Ridges", "Flared Fin Ridge", "Clustered Fins", "Radiant Ridge", "Spiral Fin Crest"],
-        "EyeColor": ["default", "Violet", "Violet", "Violet", "Violet", "Violet", "Violet","Violet", "Violet", "Violet", "Violet", "Violet", "Violet"],
-        "OptionalSpecialTraits": [ 
-            ["Gills on Torso", "Waterproof Scales", "Retractable Fins", "Transparent Eyelids", "Tail Fin", "Barbed Fingernails", "Slimy Skin", "Sharp Teeth", "Color-Changing Scales", "Curved Ridge", "Gill Covers", "Light-Sensitive Eyes", "Nictitating Membrane", "Camouflage Skin", "Prehensile Tail", "Ridge-Lined Skull", "Luminous Eyes", "Coral-Like Armor Plates", "Suction Cup Pads", "Shell-Like Exoskeleton", "Dermal Denticles", "Hardened Scales", "Enlarged Chest Cavity", "Strong Jaw Muscles", "Wide Peripheral Vision", "Barbed Tongue", "Bioluminescent Markings", "Subdermal Air Sacs", "Flesh-Colored Fins", "Adaptable Skin Texture", "Semi-Permeable Skin", "Reflective Eyes", "Buoyant Body Structure", "Secondary Set of Fins", "Antennae-Like Protrusions", "Expandable Throat Pouch", "Padded Foot Soles", "Heat-Resistant Scales", "Razor-Sharp Ridge", "Secondary Jaw", "Slime Production", "Webbed Neck Folds", "Wing-Like Fins"]
+        "SkinColor": [
+            "Pearlescent White",
+            "Pinkish White",
+            "Light Coral Pink",
+            "Red",
+            "Peach",
+            "Pale Pink",
+            "Blush Pink",
+            "Light Greenish",
+            "Seafoam Green",
+            "Pale Olive",
+            "Light Brown",
+            "Sandy Brown",
+            "Coral Brown",
+            "Rose Beige",
+            "Warm Beige",
+            "Ivory"
         ],
-        "CertainSpecialTraits" :[
-            ["Webbed Feet"], ["Webbed Hands"], ["Gills on Neck"]
+        "Undertones": [
+            "default"
         ],
+        "HairColor": [
+            "default"
+        ],
+        "Hairstyles": [
+            "Single Dorsal Fin",
+            "Double Dorsal Fins",
+            "Side Fins",
+            "Triple Fin Crest",
+            "V-shaped Fin Ridge",
+            "Scaled Ridge with Spikes",
+            "Curved Ridge",
+            "Jagged Ridge",
+            "Smooth Ridge",
+            "Webbed Fin Ridge",
+            "Short Scaled Ridge",
+            "Long Flowing Fin",
+            "Frilled Side Fins",
+            "Layered Scaled Ridge",
+            "Banded Ridge",
+            "Spiked Fin Crest",
+            "Rippled Fin",
+            "Segmented Ridge",
+            "Fan-shaped Fin",
+            "Crown-shaped Ridge",
+            "Twisted Fin",
+            "Horned Ridge",
+            "Double Webbed Fins",
+            "Scalloped Ridge",
+            "Pinnate Fin",
+            "Interlocking Ridges",
+            "Flared Fin Ridge",
+            "Clustered Fins",
+            "Radiant Ridge",
+            "Spiral Fin Crest"
+        ],
+        "EyeColor": [
+            "default",
+            "Violet",
+            "Violet",
+            "Violet",
+            "Violet",
+            "Violet",
+            "Violet",
+            "Violet",
+            "Violet",
+            "Violet",
+            "Violet",
+            "Violet",
+            "Violet"
+        ],
+        "OptionalSpecialTraits": [
+            [
+                "Gills on Torso",
+                "Waterproof Scales",
+                "Retractable Fins",
+                "Transparent Eyelids",
+                "Tail Fin",
+                "Barbed Fingernails",
+                "Slimy Skin",
+                "Sharp Teeth",
+                "Color-Changing Scales",
+                "Curved Ridge",
+                "Gill Covers",
+                "Light-Sensitive Eyes",
+                "Nictitating Membrane",
+                "Camouflage Skin",
+                "Prehensile Tail",
+                "Ridge-Lined Skull",
+                "Luminous Eyes",
+                "Coral-Like Armor Plates",
+                "Suction Cup Pads",
+                "Shell-Like Exoskeleton",
+                "Dermal Denticles",
+                "Hardened Scales",
+                "Enlarged Chest Cavity",
+                "Strong Jaw Muscles",
+                "Wide Peripheral Vision",
+                "Barbed Tongue",
+                "Bioluminescent Markings",
+                "Subdermal Air Sacs",
+                "Flesh-Colored Fins",
+                "Adaptable Skin Texture",
+                "Semi-Permeable Skin",
+                "Reflective Eyes",
+                "Buoyant Body Structure",
+                "Secondary Set of Fins",
+                "Antennae-Like Protrusions",
+                "Expandable Throat Pouch",
+                "Padded Foot Soles",
+                "Heat-Resistant Scales",
+                "Razor-Sharp Ridge",
+                "Secondary Jaw",
+                "Slime Production",
+                "Webbed Neck Folds",
+                "Wing-Like Fins"
+            ]
+        ],
+        "CertainSpecialTraits": [
+            [
+                "Webbed Feet"
+            ],
+            [
+                "Webbed Hands"
+            ],
+            [
+                "Gills on Neck"
+            ]
+        ],
+        "Heriatage": [],
         "MaxAge": 120,
         "MatureAge": 20
     },
@@ -171,13 +567,28 @@
         "LH": 60,
         "SizeAvg": 4.5,
         "SizeDev": 2.0,
-        "SkinColor": ["default"],
-        "Undertones": ["default"],
-        "HairColor": ["default"],
-        "Hairstyles": ["default"],
-        "EyeColor": ["default"],
-        "OptionalSpecialTraits": [[]],
-        "CertainSpecialTraits": [[]],
+        "SkinColor": [
+            "default"
+        ],
+        "Undertones": [
+            "default"
+        ],
+        "HairColor": [
+            "default"
+        ],
+        "Hairstyles": [
+            "default"
+        ],
+        "EyeColor": [
+            "default"
+        ],
+        "OptionalSpecialTraits": [
+            []
+        ],
+        "CertainSpecialTraits": [
+            []
+        ],
+        "Heriatage": [],
         "MaxAge": 80,
         "MatureAge": 15
     },
@@ -186,13 +597,28 @@
         "LH": 2,
         "SizeAvg": 6.0,
         "SizeDev": 1.0,
-        "SkinColor": ["default"],
-        "Undertones": ["default"],
-        "HairColor": ["default"],
-        "Hairstyles": ["default"],
-        "EyeColor": ["default"],
-        "OptionalSpecialTraits": [[]],
-        "CertainSpecialTraits": [[]],
+        "SkinColor": [
+            "default"
+        ],
+        "Undertones": [
+            "default"
+        ],
+        "HairColor": [
+            "default"
+        ],
+        "Hairstyles": [
+            "default"
+        ],
+        "EyeColor": [
+            "default"
+        ],
+        "OptionalSpecialTraits": [
+            []
+        ],
+        "CertainSpecialTraits": [
+            []
+        ],
+        "Heriatage": [],
         "MaxAge": 290,
         "MatureAge": 15
     },
@@ -201,13 +627,28 @@
         "LH": 2,
         "SizeAvg": 5.2,
         "SizeDev": 1.2,
-        "SkinColor": ["default"],
-        "Undertones": ["default"],
-        "HairColor": ["default"],
-        "Hairstyles": ["default"],
-        "EyeColor": ["default"],
-        "OptionalSpecialTraits": [[]],
-        "CertainSpecialTraits": [[]],
+        "SkinColor": [
+            "default"
+        ],
+        "Undertones": [
+            "default"
+        ],
+        "HairColor": [
+            "default"
+        ],
+        "Hairstyles": [
+            "default"
+        ],
+        "EyeColor": [
+            "default"
+        ],
+        "OptionalSpecialTraits": [
+            []
+        ],
+        "CertainSpecialTraits": [
+            []
+        ],
+        "Heriatage": [],
         "MaxAge": 140,
         "MatureAge": 20
     },
@@ -216,13 +657,28 @@
         "LH": 2,
         "SizeAvg": 6.0,
         "SizeDev": 1.0,
-        "SkinColor": ["default"],
-        "Undertones": ["default"],
-        "HairColor": ["default"],
-        "Hairstyles": ["default"],
-        "EyeColor": ["default"],
-        "OptionalSpecialTraits": [[]],
-        "CertainSpecialTraits": [[]],
+        "SkinColor": [
+            "default"
+        ],
+        "Undertones": [
+            "default"
+        ],
+        "HairColor": [
+            "default"
+        ],
+        "Hairstyles": [
+            "default"
+        ],
+        "EyeColor": [
+            "default"
+        ],
+        "OptionalSpecialTraits": [
+            []
+        ],
+        "CertainSpecialTraits": [
+            []
+        ],
+        "Heriatage": [],
         "MaxAge": 110,
         "MatureAge": 15
     },
@@ -231,13 +687,28 @@
         "LH": 2,
         "SizeAvg": 1.5,
         "SizeDev": 1.0,
-        "SkinColor": ["default"],
-        "Undertones": ["default"],
-        "HairColor": ["default"],
-        "Hairstyles": ["default"],
-        "EyeColor": ["default"],
-        "OptionalSpecialTraits": [[]],
-        "CertainSpecialTraits": [[]],
+        "SkinColor": [
+            "default"
+        ],
+        "Undertones": [
+            "default"
+        ],
+        "HairColor": [
+            "default"
+        ],
+        "Hairstyles": [
+            "default"
+        ],
+        "EyeColor": [
+            "default"
+        ],
+        "OptionalSpecialTraits": [
+            []
+        ],
+        "CertainSpecialTraits": [
+            []
+        ],
+        "Heriatage": [],
         "MaxAge": 100,
         "MatureAge": 12
     },
@@ -246,13 +717,28 @@
         "LH": 2,
         "SizeAvg": 4.0,
         "SizeDev": 2.6,
-        "SkinColor": ["default"],
-        "Undertones": ["default"],
-        "HairColor": ["default"],
-        "Hairstyles": ["default"],
-        "EyeColor": ["default"],
-        "OptionalSpecialTraits": [[]],
-        "CertainSpecialTraits": [[]],
+        "SkinColor": [
+            "default"
+        ],
+        "Undertones": [
+            "default"
+        ],
+        "HairColor": [
+            "default"
+        ],
+        "Hairstyles": [
+            "default"
+        ],
+        "EyeColor": [
+            "default"
+        ],
+        "OptionalSpecialTraits": [
+            []
+        ],
+        "CertainSpecialTraits": [
+            []
+        ],
+        "Heriatage": [],
         "MaxAge": 70,
         "MatureAge": 14
     },
@@ -261,13 +747,28 @@
         "LH": 2,
         "SizeAvg": 4.5,
         "SizeDev": 1.8,
-        "SkinColor": ["default"],
-        "Undertones": ["default"],
-        "HairColor": ["default"],
-        "Hairstyles": ["default"],
-        "EyeColor": ["default"],
-        "OptionalSpecialTraits": [[]],
-        "CertainSpecialTraits": [[]],
+        "SkinColor": [
+            "default"
+        ],
+        "Undertones": [
+            "default"
+        ],
+        "HairColor": [
+            "default"
+        ],
+        "Hairstyles": [
+            "default"
+        ],
+        "EyeColor": [
+            "default"
+        ],
+        "OptionalSpecialTraits": [
+            []
+        ],
+        "CertainSpecialTraits": [
+            []
+        ],
+        "Heriatage": [],
         "MaxAge": 1500,
         "MatureAge": 15
     },
@@ -276,13 +777,28 @@
         "LH": 2,
         "SizeAvg": 2.4,
         "SizeDev": 0.1,
-        "SkinColor": ["default"],
-        "Undertones": ["default"],
-        "HairColor": ["default"],
-        "Hairstyles": ["default"],
-        "EyeColor": ["default"],
-        "OptionalSpecialTraits": [[]],
-        "CertainSpecialTraits": [[]],
+        "SkinColor": [
+            "default"
+        ],
+        "Undertones": [
+            "default"
+        ],
+        "HairColor": [
+            "default"
+        ],
+        "Hairstyles": [
+            "default"
+        ],
+        "EyeColor": [
+            "default"
+        ],
+        "OptionalSpecialTraits": [
+            []
+        ],
+        "CertainSpecialTraits": [
+            []
+        ],
+        "Heriatage": [],
         "MaxAge": 60,
         "MatureAge": 12
     },
@@ -291,13 +807,28 @@
         "LH": 2,
         "SizeAvg": 6.0,
         "SizeDev": 1.0,
-        "SkinColor": ["default"],
-        "Undertones": ["default"],
-        "HairColor": ["default"],
-        "Hairstyles": ["default"],
-        "EyeColor": ["default"],
-        "OptionalSpecialTraits": [[]],
-        "CertainSpecialTraits": [[]],
+        "SkinColor": [
+            "default"
+        ],
+        "Undertones": [
+            "default"
+        ],
+        "HairColor": [
+            "default"
+        ],
+        "Hairstyles": [
+            "default"
+        ],
+        "EyeColor": [
+            "default"
+        ],
+        "OptionalSpecialTraits": [
+            []
+        ],
+        "CertainSpecialTraits": [
+            []
+        ],
+        "Heriatage": [],
         "MaxAge": 120,
         "MatureAge": 15
     },
@@ -306,13 +837,28 @@
         "LH": 2,
         "SizeAvg": 5.8,
         "SizeDev": 2.0,
-        "SkinColor": ["default"],
-        "Undertones": ["default"],
-        "HairColor": ["default"],
-        "Hairstyles": ["default"],
-        "EyeColor": ["default"],
-        "OptionalSpecialTraits": [[]],
-        "CertainSpecialTraits": [[]],
+        "SkinColor": [
+            "default"
+        ],
+        "Undertones": [
+            "default"
+        ],
+        "HairColor": [
+            "default"
+        ],
+        "Hairstyles": [
+            "default"
+        ],
+        "EyeColor": [
+            "default"
+        ],
+        "OptionalSpecialTraits": [
+            []
+        ],
+        "CertainSpecialTraits": [
+            []
+        ],
+        "Heriatage": [],
         "MaxAge": 75,
         "MatureAge": 15
     },
@@ -321,13 +867,28 @@
         "LH": 2,
         "SizeAvg": 5.4,
         "SizeDev": 1.0,
-        "SkinColor": ["default"],
-        "Undertones": ["default"],
-        "HairColor": ["default"],
-        "Hairstyles": ["default"],
-        "EyeColor": ["default"],
-        "OptionalSpecialTraits": [[]],
-        "CertainSpecialTraits": [[]],
+        "SkinColor": [
+            "default"
+        ],
+        "Undertones": [
+            "default"
+        ],
+        "HairColor": [
+            "default"
+        ],
+        "Hairstyles": [
+            "default"
+        ],
+        "EyeColor": [
+            "default"
+        ],
+        "OptionalSpecialTraits": [
+            []
+        ],
+        "CertainSpecialTraits": [
+            []
+        ],
+        "Heriatage": [],
         "MaxAge": 150,
         "MatureAge": 17
     }

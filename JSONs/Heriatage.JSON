@@ -1,0 +1,183 @@
+[
+    {
+        "DefaultSkinColor": [
+            "Pale White",
+            "Ivory",
+            "Warm Ivory",
+            "Porcelain",
+            "Pale Ivory",
+            "Sienna",
+            "Sand",
+            "Beige",
+            "Warm Beige",
+            "Golden",
+            "Honey",
+            "Bronze",
+            "Almond",
+            "Mahogany",
+            "Deep Brown",
+            "Ebony"
+        ],
+        "DefaultUndertones": [
+            "Warm Undertones",
+            "Cool Undertones",
+            "Neutral Undertones"
+        ],
+        "DefaultHairColor": [
+            "Black",
+            "Dark Brown",
+            "Medium Brown",
+            "Light Brown",
+            "Chestnut",
+            "Auburn",
+            "Dark Blonde",
+            "Strawberry Blonde",
+            "Blonde",
+            "Platinum Blonde",
+            "Gray",
+            "White",
+            "Red",
+            "Copper",
+            "Silver"
+        ],
+        "DefaultHairstyles": [
+            "Buzz Cut",
+            "Crew Cut",
+            "Undercut",
+            "Pompadour",
+            "Fade",
+            "Afro",
+            "Braids",
+            "Cornrows",
+            "Bob",
+            "Pixie Cut",
+            "Bun",
+            "Ponytail",
+            "Mohawk",
+            "Shag",
+            "Layered",
+            "Curly",
+            "Wavy",
+            "Straight",
+            "Updo",
+            "Dreadlocks",
+            "French Twist",
+            "Chignon",
+            "Side Part",
+            "Top Knot",
+            "Beach Waves",
+            "Fringe",
+            "Mullet",
+            "Quiff",
+            "Bowl Cut",
+            "Faux Hawk",
+            "Long Layers",
+            "High and Tight",
+            "Taper Cut",
+            "Finger Waves",
+            "Curtain Bangs",
+            "Asymmetrical Bob",
+            "Blunt Cut",
+            "Pageboy",
+            "Space Buns",
+            "Victory Rolls",
+            "Twists",
+            "Flat Top",
+            "Half-Up Half-Down",
+            "Dutch Braids",
+            "French Braid",
+            "Fishtail Braid",
+            "Box Braids",
+            "Halo Braid",
+            "Crown Braid",
+            "Slicked Back",
+            "Messy Bun",
+            "Pigtails",
+            "Top Fade",
+            "Buzzed Mohawk",
+            "Man Bun"
+        ],
+        "DefaultEyeColor": [
+            "Brown",
+            "Dark Brown",
+            "Light Brown",
+            "Hazel",
+            "Amber",
+            "Green",
+            "Light Blue",
+            "Dark Blue",
+            "Gray",
+            "Black"
+        ],
+        "AdjectiveSizes": [
+            "Cut off",
+            "Very Short",
+            "Short",
+            "Rather Short",
+            "About Average",
+            "Somewhat Long",
+            "Long",
+            "Very Long",
+            "Massive",
+            "Glorious"
+        ]
+    },
+    {
+        "Name": "Aiuvarin (Half Elf)",
+        "LH": 100,
+        "SkinColor": [
+            "default"
+        ],
+        "Undertones": [
+            "default"
+        ],
+        "HairColor": [
+            "default"
+        ],
+        "Hairstyles": [
+            "default"
+        ],
+        "EyeColor": [
+            "default",
+            "Red",
+            "Orange",
+            "Yellow",
+            "Green",
+            "Blue",
+            "Purple",
+            "Pink",
+            "Teal",
+            "Turquoise",
+            "Crimson",
+            "Vermillion",
+            "Goldenrod",
+            "Lime Green",
+            "Azure",
+            "Violet",
+            "Magenta",
+            "Coral",
+            "Cerulean",
+            "Lavender",
+            "Ruby",
+            "Saffron",
+            "Chartreuse",
+            "Cobalt Blue",
+            "Amethyst",
+            "Fuchsia",
+            "Salmon",
+            "Sky Blue",
+            "Lilac"
+        ],
+        "OptionalSpecialTraits": [
+            [
+                "Wide and rounded eyes"
+            ],
+            [
+                "{AdjectiveSizes} sharply pointy ears"
+            ]
+        ],
+        "CertainSpecialTraits": [
+            []
+        ]
+    }
+]
