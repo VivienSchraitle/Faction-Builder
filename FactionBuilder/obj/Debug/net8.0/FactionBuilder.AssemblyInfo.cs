@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FactionBuilder")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c36ceed7871310c7ca89535e17b44cdb1f8cfc91")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+deb3e826ac4711d564d0ebd2754f340a0b618b94")]
 [assembly: System.Reflection.AssemblyProductAttribute("FactionBuilder")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FactionBuilder")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
