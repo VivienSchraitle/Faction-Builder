@@ -1,0 +1,79 @@
+<Window x:Class="WindowManager.MainWindow"
+        xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="FactionGenerator" Width="800" Height="600">
+    <StackPanel Margin="20">
+
+        <!-- Parameter 1 -->
+    <Grid ShowGridLines="True" Margin="0,10,0,0">
+        <Grid.ColumnDefinitions>
+       <ColumnDefinition Width="200"></ColumnDefinition>
+       <ColumnDefinition Width="200"></ColumnDefinition>
+       <ColumnDefinition Width="300"></ColumnDefinition>
+        <ColumnDefinition Width="200"></ColumnDefinition>
+       <ColumnDefinition Width="300"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+        <RowDefinition Height="Auto"/>  </Grid.RowDefinitions>
+        <TextBlock Text="Scale (1-100):" FontSize="14" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Left" Grid.Column="0" Grid.Row="0"/>
+        <TextBox x:Name="ScaleInput" Width="200" Height="40" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Grid.Row="0" 
+             Watermark="I AM HERE" Background="White" Foreground="Black" IsVisible="True" IsEnabled="True"/>
+    </Grid>
+
+        <!-- Parameter 2 -->
+        <Grid Margin="0,10,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="Funds (1-100):" FontSize="14" FontWeight="Bold" VerticalAlignment="Center" Grid.Column="0"/>
+            <TextBox x:Name="FundsInput" Width="60" HorizontalAlignment="Right" Grid.Column="1"/>
+        </Grid>
+
+        <!-- Parameter 3 -->
+        <Grid Margin="0,10,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="Magic Score (1-100):" FontSize="14" FontWeight="Bold" VerticalAlignment="Center" Grid.Column="0"/>
+            <TextBox x:Name="MagicInput" Width="60" HorizontalAlignment="Right" Grid.Column="1"/>
+        </Grid>
+
+        <!-- Parameter 4 -->
+        <Grid Margin="0,10,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="Military Score (1-100):" FontSize="14" FontWeight="Bold" VerticalAlignment="Center" Grid.Column="0"/>
+            <TextBox x:Name="MilitaryInput" Width="60" HorizontalAlignment="Right" Grid.Column="1"/>
+        </Grid>
+
+        <!-- Parameter 5 -->
+        <Grid Margin="0,10,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="Reputation (1-100):" FontSize="14" FontWeight="Bold" VerticalAlignment="Center" Grid.Column="0"/>
+            <TextBox x:Name="ReputationInput" Width="60" HorizontalAlignment="Right" Grid.Column="1"/>
+        </Grid>
+
+        <!-- Parameter 6 -->
+        <Grid Margin="0,10,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="Intensity (1-5):" FontSize="14" FontWeight="Bold" VerticalAlignment="Center" Grid.Column="0"/>
+            <TextBox x:Name="IntensityInput" Width="60" HorizontalAlignment="Right" Grid.Column="1"/>
+        </Grid>
+
+        <!-- Buttons and Output -->
+        <Button Content="Generate Faction" Click="GenerateFactionClick" Margin="0,20,0,10"/>
+        <TextBlock Text="Faction Details:" FontWeight="Bold"/>
+        <TextBlock x:Name="FactionDetails" TextWrapping="Wrap" Height="150" Margin="0,10,0,10"/>
+        <Button Content="Save Faction" Click="SaveFactionClick"/>
+    </StackPanel>
+</Window>

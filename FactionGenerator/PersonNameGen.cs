@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace FactionBuilder
-{
+
     public class PersonNameGen
     {
         enum Gender
@@ -114,4 +113,3 @@ namespace FactionBuilder
 
 
     }
-}

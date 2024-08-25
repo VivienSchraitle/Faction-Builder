@@ -35,14 +35,14 @@ public class Faction
 
     private Random rnd = new();
 
-    public Faction(int magic, int military, int money, int scale, int reputation)
+    public Faction(int scale, int money, int magic, int military, int reputation, int intensity)
     {
         MagicScore = magic;
         MilitaristicScore = military;
         FinanceScore = money;
         SizeScale = scale;
         ReputationScore = reputation;
-        IntensityScore = rnd.Next(1, 6);
+        IntensityScore = intensity;
     }
 
     public string GetName()
@@ -99,7 +99,7 @@ public class Faction
         for (int i = 0; i < amount; i++)
         {
             GoalsArray[i] = DataManager.FactionGoals[rnd.NextInt64(DataManager.FactionGoals.Length)];
-            goals += GoalsArray[i] + "\n";
+            goals += GoalsArray[i] + ", ";
         }
         return goals;
     }
@@ -172,10 +172,10 @@ public class Faction
             return DataManager.JoinRitualSimple[rnd.NextInt64(DataManager.JoinRitualSimple.Length)];
         if (dedicationValue < 600)
             return DataManager.JoinRitualMedium[rnd.NextInt64(DataManager.JoinRitualMedium.Length)];
-        if (dedicationValue < 900)
+        if (dedicationValue < 1101)
             return DataManager.JoinRitualHard[rnd.NextInt64(DataManager.JoinRitualHard.Length)];
-        
-        Console.WriteLine("UNDEFINED CONTROL SEQUENCE");
+
+        Console.WriteLine("UNDEFINED CONTROL SEQUENCE JOIN RITUAL");
         Environment.Exit(0);
         return null; // Just to satisfy the compiler; it will never reach here.
     }
@@ -226,17 +226,21 @@ public class Faction
             Values[i] = DataManager.Virtues[rnd.NextInt64(DataManager.Virtues.Length)];
             values += Values[i] + ", ";
         }
+        int reducer = 0;
         for (int i = 0; i < moneyCount; i++)
         {
             int rndScore = rnd.Next(101);
-            int finances = rndScore + 3 * FinanceScore - i * 10;
+            int finances = rndScore + 3 * FinanceScore - reducer * 7;
             if (finances < 70)
                 MoneySources[i] = DataManager.LowFinances[rnd.NextInt64(DataManager.LowFinances.Length)];
             else if (finances < 270)
                 MoneySources[i] = DataManager.MidFinances[rnd.NextInt64(DataManager.MidFinances.Length)];
             else
+            {
                 MoneySources[i] = DataManager.HighFinances[rnd.NextInt64(DataManager.HighFinances.Length)];
-            money += MoneySources[i] + "\n";
+                reducer += 1;
+            }
+            money += MoneySources[i] + ", ";
         }
         for (int i = 0; i < doctrineCount; i++)
         {
@@ -271,11 +275,11 @@ public class Faction
         reputationIndex = Math.Clamp(reputationIndex, 0, DataManager.Reputation.Length - 1);
 
         StandingsArray = new string[6];
-        StandingsArray[0] = DataManager.Wealth[financeIndex];
-        StandingsArray[1] = DataManager.MagicalInclination[magicIndex];
-        StandingsArray[2] = DataManager.MilitaryInclination[militaryIndex];
-        StandingsArray[3] = DataManager.Intensity[intensityIndex];
-        StandingsArray[4] = DataManager.Size[scaleIndex];
+        StandingsArray[2] = DataManager.Wealth[financeIndex];
+        StandingsArray[0] = DataManager.MagicalInclination[magicIndex];
+        StandingsArray[1] = DataManager.MilitaryInclination[militaryIndex];
+        StandingsArray[4] = DataManager.Intensity[intensityIndex];
+        StandingsArray[3] = DataManager.Size[scaleIndex];
         StandingsArray[5] = DataManager.Reputation[reputationIndex];
 
         return string.Join("\n", StandingsArray);
