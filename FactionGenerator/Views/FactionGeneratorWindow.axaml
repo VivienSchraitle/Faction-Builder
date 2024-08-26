@@ -1,0 +1,60 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:FactionGenerator.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="FactionGenerator.Views.FactionGeneratorWindow"
+        x:DataType="vm:MainWindowViewModel"
+        Title="FactionGenerator">
+
+    <Design.DataContext>
+        <!-- This only sets the DataContext for the previewer in an IDE,
+             to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
+        <vm:MainWindowViewModel/>
+    </Design.DataContext>
+
+<StackPanel Margin="20">
+
+        <Grid ShowGridLines="False" Margin="5"
+            ColumnDefinitions="18*, 16*, 16*, 16*, 16*, 18*"
+            RowDefinitions="34, 34, 34">          
+
+
+            <TextBlock Text="Scale (1-100):" FontSize="14" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Grid.Row="0"/>
+            <TextBox x:Name="ScaleInput" Width="60" HorizontalAlignment="Center" Grid.Column="0" Grid.Row="1"/>
+            <Button Content="Rnd" Click="RandomScale" Width="45" HorizontalAlignment="Center" Grid.Column="0" Grid.Row="2"/>
+
+            <TextBlock Text="Funds (1-100):" FontSize="14" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Grid.Row="0"/>
+            <TextBox x:Name="FundsInput" Width="60" HorizontalAlignment="Center" Grid.Column="1" Grid.Row="1"/>
+            <Button Content="Rnd" Click="RandomFunds" Width="45" HorizontalAlignment="Center" Grid.Column="1" Grid.Row="2"/>
+
+            <TextBlock Text="Magic Score (1-100):" FontSize="14" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="2"/>
+            <TextBox x:Name="MagicInput" Width="60" HorizontalAlignment="Center" Grid.Column="2" Grid.Row="1"/>
+            <Button Content="Rnd" Click="RandomMagic" Width="45" HorizontalAlignment="Center" Grid.Column="2" Grid.Row="2"/>
+
+            <TextBlock Text="Military Score (1-100):" FontSize="14" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="3" Grid.Row="0"/>
+            <TextBox x:Name="MilitaryInput" Width="60" HorizontalAlignment="Center" Grid.Column="3" Grid.Row="1"/>
+            <Button Content="Rnd" Click="RandomMilitary" Width="45" HorizontalAlignment="Center" Grid.Column="3" Grid.Row="2"/>
+
+            <TextBlock Text="Reputation (1-100):" FontSize="14" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="4" Grid.Row="0"/>
+            <TextBox x:Name="ReputationInput" Width="60" HorizontalAlignment="Center" Grid.Column="4" Grid.Row="1"/>
+            <Button Content="Rnd" Click="RandomReputation" Width="45" HorizontalAlignment="Center" Grid.Column="4" Grid.Row="2"/>
+
+            <TextBlock Text="Intensity (1-5):" FontSize="14" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="5" Grid.Row="0"/>
+            <TextBox x:Name="IntensityInput" Width="60" HorizontalAlignment="Center" Grid.Column="5" Grid.Row="1"/>
+            <Button Content="Rnd" Click="RandomIntensity" Width="45" HorizontalAlignment="Center" Grid.Column="5" Grid.Row="2"/>
+
+
+
+        </Grid>
+                <!-- Buttons and Output -->
+        <Button Content="Random Values" Click="GenerateAllValues" Margin="0,20,0,10"/>
+        <Button Content="Generate Faction" Click="GenerateFactionClick" Margin="0,10,0,10"/>
+
+        <TextBlock Text="Faction Details:" FontWeight="Bold"/>
+        <TextBlock x:Name="FactionDetails" TextWrapping="Wrap" Height="450" Margin="0,10,0,10"/>
+        <Button Content="Save Faction" Click="SaveFactionClick"/>
+        <Button Content="Return to Menu" Click="StartMenuClick"/>
+    </StackPanel>
+</Window>

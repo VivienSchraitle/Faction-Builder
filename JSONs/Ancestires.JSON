@@ -94,8 +94,7 @@
             "Messy Bun",
             "Pigtails",
             "Top Fade",
-            "Buzzed Mohawk",
-            "Man Bun"
+            "Buzzed Mohawk"
         ],
         "DefaultEyeColor": [
             "Brown",
@@ -178,13 +177,13 @@
         "CertainSpecialTraits": [
             []
         ],
-        "Heriatage": [],
+        "Heriatage": ["Ancient-Blooded Dwarf", "Anvil Dwarf", "Death Warden Dwarf", "Elemental Heart Dwarf", "Forge Dwarf", "Forge-Blessed Dwarf", "Oathkeeper Dwarf", "Rock Dwarf", "Strong-Blooded Dwarf"],
         "MaxAge": 350,
         "MatureAge": 25
     },
     {
         "Name": "Elf",
-        "LH": 40,
+        "LH": 100,
         "SizeAvg": 5.4,
         "SizeDev": 2.0,
         "SkinColor": [
@@ -276,7 +275,7 @@
     },
     {
         "Name": "Goblin",
-        "LH": 20,
+        "LH": 100,
         "SizeAvg": 3.1,
         "SizeDev": 0.4,
         "SkinColor": [
@@ -336,7 +335,7 @@
     },
     {
         "Name": "Orc",
-        "LH": 50,
+        "LH": 100,
         "SizeAvg": 5.2,
         "SizeDev": 2.3,
         "SkinColor": [
@@ -366,7 +365,7 @@
     },
     {
         "Name": "Leshy",
-        "LH": 10,
+        "LH": 100,
         "SizeAvg": 2.5,
         "SizeDev": 1.0,
         "SkinColor": [
@@ -396,7 +395,7 @@
     },
     {
         "Name": "Athamaru",
-        "LH": 10,
+        "LH": 30,
         "SizeAvg": 4.3,
         "SizeDev": 2.0,
         "SkinColor": [
@@ -426,7 +425,7 @@
     },
     {
         "Name": "Azarketi",
-        "LH": 5,
+        "LH": 30,
         "SizeAvg": 5.0,
         "SizeDev": 1.0,
         "SkinColor": [
@@ -487,18 +486,7 @@
         ],
         "EyeColor": [
             "default",
-            "Violet",
-            "Violet",
-            "Violet",
-            "Violet",
-            "Violet",
-            "Violet",
-            "Violet",
-            "Violet",
-            "Violet",
-            "Violet",
-            "Violet",
-            "Violet"
+            "70Violet"
         ],
         "OptionalSpecialTraits": [
             [
@@ -564,7 +552,7 @@
     },
     {
         "Name": "Catfolk",
-        "LH": 60,
+        "LH": 30,
         "SizeAvg": 4.5,
         "SizeDev": 2.0,
         "SkinColor": [
@@ -594,7 +582,7 @@
     },
     {
         "Name": "Centaur",
-        "LH": 2,
+        "LH": 30,
         "SizeAvg": 6.0,
         "SizeDev": 1.0,
         "SkinColor": [
@@ -624,7 +612,7 @@
     },
     {
         "Name": "Fetchlings",
-        "LH": 2,
+        "LH": 30,
         "SizeAvg": 5.2,
         "SizeDev": 1.2,
         "SkinColor": [
@@ -654,7 +642,7 @@
     },
     {
         "Name": "Gnoll",
-        "LH": 2,
+        "LH": 30,
         "SizeAvg": 6.0,
         "SizeDev": 1.0,
         "SkinColor": [
@@ -684,7 +672,7 @@
     },
     {
         "Name": "Grippli",
-        "LH": 2,
+        "LH": 30,
         "SizeAvg": 1.5,
         "SizeDev": 1.0,
         "SkinColor": [
@@ -714,7 +702,7 @@
     },
     {
         "Name": "Hobgoblin",
-        "LH": 2,
+        "LH": 30,
         "SizeAvg": 4.0,
         "SizeDev": 2.6,
         "SkinColor": [
@@ -744,7 +732,7 @@
     },
     {
         "Name": "Kitsune",
-        "LH": 2,
+        "LH": 100,
         "SizeAvg": 4.5,
         "SizeDev": 1.8,
         "SkinColor": [
@@ -774,7 +762,7 @@
     },
     {
         "Name": "Kobold",
-        "LH": 2,
+        "LH": 30,
         "SizeAvg": 2.4,
         "SizeDev": 0.1,
         "SkinColor": [
@@ -804,7 +792,7 @@
     },
     {
         "Name": "Lizardfolk",
-        "LH": 2,
+        "LH": 30,
         "SizeAvg": 6.0,
         "SizeDev": 1.0,
         "SkinColor": [
@@ -834,7 +822,7 @@
     },
     {
         "Name": "Merfolk",
-        "LH": 2,
+        "LH": 30,
         "SizeAvg": 5.8,
         "SizeDev": 2.0,
         "SkinColor": [
@@ -864,7 +852,7 @@
     },
     {
         "Name": "Minotaur",
-        "LH": 2,
+        "LH": 30,
         "SizeAvg": 5.4,
         "SizeDev": 1.0,
         "SkinColor": [
@@ -891,5 +879,65 @@
         "Heriatage": [],
         "MaxAge": 150,
         "MatureAge": 17
+    },
+    {
+        "Name": "Nagaji",
+        "LH": 30,
+        "SizeAvg": 5.6,
+        "SizeDev": 2,
+        "SkinColor": [
+            "default"
+        ],
+        "Undertones": [
+            "default"
+        ],
+        "HairColor": [
+            "default"
+        ],
+        "Hairstyles": [
+            "default"
+        ],
+        "EyeColor": [
+            "default"
+        ],
+        "OptionalSpecialTraits": [
+            []
+        ],
+        "CertainSpecialTraits": [
+            ["Fangs"]
+        ],
+        "Heriatage": ["Hooded Nagaji","Sacred Nagaji","Titan Nagaji","Venomshield Nagaji","Whipfang Nagaji"],
+        "MaxAge": 135,
+        "MatureAge": 20 
+    },
+    {
+        "Name": "Ratfolk",
+        "LH": 30,
+        "SizeAvg": 3.4,
+        "SizeDev": 1,
+        "SkinColor": [
+            "default"
+        ],
+        "Undertones": [
+            "80Short","Long","Frazzled","Fluffy"
+        ],
+        "HairColor": [
+            "default","40brown","40black"
+        ],
+        "Hairstyles": [
+            "default"
+        ],
+        "EyeColor": [
+            "default","80Red"
+        ],
+        "OptionalSpecialTraits": [
+            []
+        ],
+        "CertainSpecialTraits": [
+            ["whiskered snouts"], [" large ears"], ["hairless tails"]
+        ],
+        "Heriatage": ["Deep Rat","Desert Rat","Longsnout Rat","Sewer Rat","Shadow Rat","Snow Rat","Tunnel Rat"],
+        "MaxAge": 45,
+        "MatureAge": 12
     }
 ]

@@ -318,9 +318,11 @@ public static class DataManager
 
     private static string[] ResolveDefaults(string[] values, string[] defaults)
     {
-        return values.Length == 1 && values[0].ToLower() == "default"
-            ? defaults
-            : values;
+        if (values[0].ToLower() == "default")
+        {
+            return defaults.Concat(values.Where(v => v.ToLower() != "default")).ToArray();
+        }
+        return values;
     }
 }
 
