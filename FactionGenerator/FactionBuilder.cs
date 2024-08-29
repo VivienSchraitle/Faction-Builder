@@ -21,6 +21,7 @@ public class FactionBuilder
         {
             GenerateRandomValues();
         }
+#pragma warning disable // Dereference of a possibly null reference.
         for (int i = 0; i < inputParts.Length; i++)
         {
             if (string.IsNullOrEmpty(inputParts[i]))
@@ -28,6 +29,7 @@ public class FactionBuilder
                 inputParts[i] = GetRandomValueForParameter(i);
             }
         }
+#pragma warning restore // Dereference of a possibly null reference.
 
         if (ValidateParameters(inputParts))
         {

@@ -22,12 +22,14 @@ public partial class FactionGeneratorWindow : Window
 
                 string[] inputParts = new string[]
                 {
+                    #pragma warning disable
                     ScaleInput.Text,
                     FundsInput.Text,
                     MagicInput.Text,
                     MilitaryInput.Text,
                     ReputationInput.Text,
                     IntensityInput.Text
+                    #pragma warning enable
                 };
 
                 factionBuilder.GenerateFaction(inputParts);

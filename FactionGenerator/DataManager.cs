@@ -74,7 +74,7 @@ public static class DataManager
         public string[][] OptionalSpecialTraits;
         public string[][] CertainSpecialTraits;
     }
-
+#pragma warning disable
     static DataManager()
     {
         LoadFactionData();
