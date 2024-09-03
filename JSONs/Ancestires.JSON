@@ -147,7 +147,7 @@
         "CertainSpecialTraits": [
             []
         ],
-        "Heriatage": [],
+        "Heriatage": ["Skilled Human", "Versatile Human"],
         "MaxAge": 90,
         "MatureAge": 18
     },
@@ -172,10 +172,10 @@
             "default"
         ],
         "OptionalSpecialTraits": [
-            []
+            ["{AdjectiveSizes} beard"]
         ],
         "CertainSpecialTraits": [
-            []
+            ["short and stocky"]
         ],
         "Heriatage": ["Ancient-Blooded Dwarf", "Anvil Dwarf", "Death Warden Dwarf", "Elemental Heart Dwarf", "Forge Dwarf", "Forge-Blessed Dwarf", "Oathkeeper Dwarf", "Rock Dwarf", "Strong-Blooded Dwarf"],
         "MaxAge": 350,
@@ -239,7 +239,7 @@
                 "{AdjectiveSizes} sharply pointy ears"
             ]
         ],
-        "Heriatage": [],
+        "Heriatage": ["Cavern Elf","Seer Elf", "Whisper Elf", "Woodland Elf"],
         "MaxAge": 600,
         "MatureAge": 50
     },
@@ -249,19 +249,49 @@
         "SizeAvg": 3.0,
         "SizeDev": 0.4,
         "SkinColor": [
-            "default"
+            "default", "Green","Black", "Pale Blue"
         ],
         "Undertones": [
-            "default"
+            "Non Bleached", "Very slightly Bleached", "Slightly Bleached", "Moderately Bleached", "Very Bleached", "About to be fully Bleached", "Fully Bleached"
         ],
         "HairColor": [
-            "default"
+            "default",
+            "Red",
+            "Orange",
+            "Yellow",
+            "Green",
+            "Blue",
+            "Purple",
+            "Pink",
+            "Teal",
+            "Turquoise",
+            "Crimson",
+            "Vermillion",
+            "Goldenrod",
+            "Lime Green",
+            "Azure",
+            "Violet",
+            "Magenta",
+            "Coral",
+            "Cerulean",
+            "Lavender",
+            "Ruby",
+            "Saffron",
+            "Chartreuse",
+            "Cobalt Blue",
+            "Amethyst",
+            "Fuchsia",
+            "Salmon",
+            "Sky Blue",
+            "Lilac",
+            "Purple",
+            "Rosa"
         ],
         "Hairstyles": [
             "default"
         ],
         "EyeColor": [
-            "default"
+            "default","Crimson", "Scarlet", "Ruby", "Rose", "Maroon", "Burgundy", "Cherry", "Brick", "Coral", "Magenta", "Tangerine", "Mandarin", "Peach", "Apricot", "Burnt orange", "Rust", "Cinnamon", "Ginger", "Pumpkin", "Amber", "Lemon", "Lime", "Gold", "Mustard", "Canary", "Buttermilk", "Honey", "Saffron", "Sunflower", "Cream", "Emerald", "Jade", "Olive", "Chartreuse", "Lime green", "Forest green", "Moss", "Mint", "Teal", "Turquoise", "Navy", "Indigo", "Sapphire", "Cobalt", "Azure", "Cerulean", "Sky blue", "Cornflower blue", "Periwinkle", "Lavender", "Violet", "Lilac", "Amethyst", "Lavender", "Plum", "Mauve", "Fuchsia", "Magenta", "Eggplant", "Grape", "Pink", "Salmon", "Brown", "Chocolate", "Black", "White", "Ivory", "Beige", "Tan", "Gold", "Silver"
         ],
         "OptionalSpecialTraits": [
             []
