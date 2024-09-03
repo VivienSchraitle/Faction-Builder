@@ -6,8 +6,6 @@
     <BuiltInComInteropSupport>true</BuiltInComInteropSupport>
 
     <ApplicationManifest>app.manifest</ApplicationManifest>
-    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
-    
     <AvaloniaUseCompiledBindingsByDefault>true</AvaloniaUseCompiledBindingsByDefault>
   </PropertyGroup>
 

@@ -17,7 +17,7 @@
 <StackPanel Margin="20">
 
         <Grid ShowGridLines="False" Margin="5"
-            ColumnDefinitions="18*, 16*, 16*, 16*, 16*, 18*"
+            ColumnDefinitions="15*, 14*, 14*, 14*, 14*, 14*, 15*"
             RowDefinitions="34, 34, 34">          
 
 
@@ -37,13 +37,17 @@
             <TextBox x:Name="MilitaryInput" Width="60" HorizontalAlignment="Center" Grid.Column="3" Grid.Row="1"/>
             <Button Content="Rnd" Click="RandomMilitary" Width="45" HorizontalAlignment="Center" Grid.Column="3" Grid.Row="2"/>
 
-            <TextBlock Text="Reputation (1-100):" FontSize="14" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="4" Grid.Row="0"/>
-            <TextBox x:Name="ReputationInput" Width="60" HorizontalAlignment="Center" Grid.Column="4" Grid.Row="1"/>
-            <Button Content="Rnd" Click="RandomReputation" Width="45" HorizontalAlignment="Center" Grid.Column="4" Grid.Row="2"/>
+            <TextBlock Text="Religion Score (1-100):" FontSize="14" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="4" Grid.Row="0"/>
+            <TextBox x:Name="ReligionInput" Width="60" HorizontalAlignment="Center" Grid.Column="4" Grid.Row="1"/>
+            <Button Content="Rnd" Click="RandomReligion" Width="45" HorizontalAlignment="Center" Grid.Column="4" Grid.Row="2"/>
 
-            <TextBlock Text="Intensity (1-5):" FontSize="14" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="5" Grid.Row="0"/>
-            <TextBox x:Name="IntensityInput" Width="60" HorizontalAlignment="Center" Grid.Column="5" Grid.Row="1"/>
-            <Button Content="Rnd" Click="RandomIntensity" Width="45" HorizontalAlignment="Center" Grid.Column="5" Grid.Row="2"/>
+            <TextBlock Text="Reputation (1-100):" FontSize="14" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="5" Grid.Row="0"/>
+            <TextBox x:Name="ReputationInput" Width="60" HorizontalAlignment="Center" Grid.Column="5" Grid.Row="1"/>
+            <Button Content="Rnd" Click="RandomReputation" Width="45" HorizontalAlignment="Center" Grid.Column="5" Grid.Row="2"/>
+
+            <TextBlock Text="Intensity (1-5):" FontSize="14" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="6" Grid.Row="0"/>
+            <TextBox x:Name="IntensityInput" Width="60" HorizontalAlignment="Center" Grid.Column="6" Grid.Row="1"/>
+            <Button Content="Rnd" Click="RandomIntensity" Width="45" HorizontalAlignment="Center" Grid.Column="6" Grid.Row="2"/>
 
 
 

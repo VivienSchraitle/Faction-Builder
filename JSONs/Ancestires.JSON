@@ -846,7 +846,7 @@
         "CertainSpecialTraits": [
             []
         ],
-        "Heriatage": [],
+        "Heriatage": ["Abyssal Merfolk","Carcharodon Merfolk","Pelagic Merfolk","Reef Merfolk","Sailfish Merfolk"],
         "MaxAge": 75,
         "MatureAge": 15
     },
@@ -876,7 +876,7 @@
         "CertainSpecialTraits": [
             []
         ],
-        "Heriatage": [],
+        "Heriatage": ["Ghost Bull Minotaur","Glacier Cavern Minotaur","Littlehorn Minotaur","Roaming Minotaur","Slabsoul Minotaur","Stalker Minotaur"],
         "MaxAge": 150,
         "MatureAge": 17
     },
@@ -939,5 +939,35 @@
         "Heriatage": ["Deep Rat","Desert Rat","Longsnout Rat","Sewer Rat","Shadow Rat","Snow Rat","Tunnel Rat"],
         "MaxAge": 45,
         "MatureAge": 12
+    },
+    {
+        "Name": "Tengu",
+        "LH": 30,
+        "SizeAvg": 3.10,
+        "SizeDev": 1.2,
+        "SkinColor": [
+            "black","charcoal","oynx","deepblack"
+        ],
+        "Undertones": [
+            "patchy","fluffy","thick","shiny"
+        ],
+        "HairColor": [
+            "na"
+        ],
+        "Hairstyles": [
+            "na"
+        ],
+        "EyeColor": [
+            "default"
+        ],
+        "OptionalSpecialTraits": [
+            ["dyed paterns","dyed feathers"]
+        ],
+        "CertainSpecialTraits": [
+            ["crows head", "taloned legs"]
+        ],
+        "Heriatage": ["Dogtooth Tengu","Jinxed Tengu","Mountainkeeper Tengu","Skyborn Tengu","Stormtossed Tengu","Taloned Tengu","Wavediver Tengu"],
+        "MaxAge": 85,
+        "MatureAge": 15 
     }
 ]

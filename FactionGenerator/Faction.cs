@@ -9,6 +9,7 @@ public class Faction
     public int MilitaristicScore { get; private set; }
     public int FinanceScore { get; private set; }
     public int ReputationScore { get; private set; }
+    public int ReligionScore { get; private set; }
 
     public string[]? GoalsArray { get; private set; }
     public string[]? DomainsArray { get; private set; }
@@ -35,7 +36,7 @@ public class Faction
 
     private Random rnd = new();
 
-    public Faction(int scale, int money, int magic, int military, int reputation, int intensity)
+    public Faction(int scale, int money, int magic, int military, int religious, int reputation, int intensity )
     {
         MagicScore = magic;
         MilitaristicScore = military;
@@ -43,6 +44,7 @@ public class Faction
         SizeScale = scale;
         ReputationScore = reputation;
         IntensityScore = intensity;
+        ReligionScore = religious;
     }
 
     public string GetName()
@@ -65,25 +67,31 @@ public class Faction
         string domains = "Their fields of concern: ";
         int amount = (SizeScale / 10) + IntensityScore;
         int rndIndex = rnd.Next(50, 100);
-        int distributer = rndIndex + MagicScore + MilitaristicScore;
+        int distributer = rndIndex + MagicScore + MilitaristicScore + ReligionScore;
         int magicAmount = (int)Math.Round((double)amount / distributer);
         int militaryAmount = (int)Math.Round((double)amount / distributer);
+        int religionAmount = (int)Math.Round((double)ReligionScore / distributer);
 
         DomainsArray = new string[amount];
 
-        for (int i = 0; i < amount - magicAmount - militaryAmount; i++)
+        for (int i = 0; i < amount - magicAmount - militaryAmount - religionAmount; i++)
         {
             DomainsArray[i] = DataManager.FactionDomainsMundane[rnd.NextInt64(DataManager.FactionDomainsMundane.Length)];
             domains += DomainsArray[i] + ", ";
         }
-        for (int i = amount - magicAmount - militaryAmount; i < amount - militaryAmount; i++)
+        for (int i = amount - magicAmount - militaryAmount - religionAmount; i < amount - militaryAmount - religionAmount; i++)
         {
             DomainsArray[i] = DataManager.FactionDomainsMagical[rnd.NextInt64(DataManager.FactionDomainsMagical.Length)];
             domains += DomainsArray[i] + ", ";
         }
-        for (int i = amount - militaryAmount; i < amount; i++)
+        for (int i = amount - militaryAmount - religionAmount; i < amount - religionAmount; i++)
         {
             DomainsArray[i] = DataManager.FactionDomainsMilitary[rnd.NextInt64(DataManager.FactionDomainsMilitary.Length)];
+            domains += DomainsArray[i] + ", ";
+        }
+        for (int i = amount - religionAmount; i < amount; i++)
+        {
+            DomainsArray[i] = DataManager.FactionDomainsReligious[rnd.NextInt64(DataManager.FactionDomainsReligious.Length)];
             domains += DomainsArray[i] + ", ";
         }
         domains += "and they are defined by their craving for: " + DataManager.FactionEssence[rnd.NextInt64(DataManager.FactionEssence.Length)];
@@ -175,7 +183,7 @@ public class Faction
         if (dedicationValue < 1101)
             return DataManager.JoinRitualHard[rnd.NextInt64(DataManager.JoinRitualHard.Length)];
 
-        Console.WriteLine("UNDEFINED CONTROL SEQUENCE JOIN RITUAL");
+        Console.WriteLine($"UNDEFINED CONTROL SEQUENCE JOIN RITUAL VALUE = {dedicationValue} = {rndScore} + {IntensityScore} * 100 + {helper} * 100");
         Environment.Exit(0);
         return null; // Just to satisfy the compiler; it will never reach here.
     }

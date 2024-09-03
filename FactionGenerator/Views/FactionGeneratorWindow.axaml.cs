@@ -27,8 +27,10 @@ public partial class FactionGeneratorWindow : Window
                     FundsInput.Text,
                     MagicInput.Text,
                     MilitaryInput.Text,
+                    ReligionInput.Text,
                     ReputationInput.Text,
                     IntensityInput.Text
+                    
                     #pragma warning enable
                 };
 
@@ -56,6 +58,10 @@ public partial class FactionGeneratorWindow : Window
         {
              MilitaryInput.Text = rnd.Next(0,101).ToString();
         }
+        private void RandomReligion(object sender, RoutedEventArgs e)
+        {
+             ReligionInput.Text = rnd.Next(0,101).ToString();
+        }
         private void RandomReputation(object sender, RoutedEventArgs e)
         {
              ReputationInput.Text = rnd.Next(0,101).ToString();
@@ -70,6 +76,7 @@ public partial class FactionGeneratorWindow : Window
             FundsInput.Text = rnd.Next(0,101).ToString();
             MagicInput.Text = rnd.Next(0,101).ToString();
             MilitaryInput.Text = rnd.Next(0,101).ToString();
+            ReligionInput.Text = rnd.Next(0,101).ToString();
             ReputationInput.Text = rnd.Next(0,101).ToString();
             IntensityInput.Text = rnd.Next(0,6).ToString();
         }

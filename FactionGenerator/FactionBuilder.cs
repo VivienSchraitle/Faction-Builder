@@ -12,7 +12,7 @@ public class FactionBuilder
     private string standing = "";
     private string[] parts = Array.Empty<string>();
     private Random rnd = new();
-    private int numParameters = 6;
+    private int numParameters = 7;
     private Faction myFaction = null!;
 
     public void GenerateFaction(string[] inputParts)
@@ -42,7 +42,7 @@ public class FactionBuilder
 
 
         int[] inParameters = parts.Select(int.Parse).ToArray();
-        myFaction = new Faction(inParameters[0], inParameters[1], inParameters[2], inParameters[3], inParameters[4], inParameters[5]);
+        myFaction = new Faction(inParameters[0], inParameters[1], inParameters[2], inParameters[3], inParameters[4], inParameters[5], inParameters[6]);
 
         UpdateFactionData();
     }
@@ -95,8 +95,8 @@ private string GetRandomValueForParameter(int index)
 {
     switch (index)
     {
-        case 0 or 1 or 2 or 3 or 4: return rnd.Next(0, 101).ToString();
-        case 5: return rnd.Next(0, 6).ToString();
+        case 0 or 1 or 2 or 3 or 4 or 5: return rnd.Next(0, 101).ToString();
+        case 6: return rnd.Next(0, 6).ToString();
         default: throw new ArgumentOutOfRangeException("Invalid parameter index.");
     }
 }

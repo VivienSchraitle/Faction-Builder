@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.002.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FactionGenerator", "FactionGenerator\FactionGenerator.csproj", "{B171AF4E-14E1-491A-837D-EB6C371E3509}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FactionGenerator", "FactionGenerator\FactionGenerator.csproj", "{96C2A142-3D5D-4AA2-A01F-4AD82FA0DDD8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{B171AF4E-14E1-491A-837D-EB6C371E3509}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B171AF4E-14E1-491A-837D-EB6C371E3509}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B171AF4E-14E1-491A-837D-EB6C371E3509}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B171AF4E-14E1-491A-837D-EB6C371E3509}.Release|Any CPU.Build.0 = Release|Any CPU
+		{96C2A142-3D5D-4AA2-A01F-4AD82FA0DDD8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96C2A142-3D5D-4AA2-A01F-4AD82FA0DDD8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96C2A142-3D5D-4AA2-A01F-4AD82FA0DDD8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96C2A142-3D5D-4AA2-A01F-4AD82FA0DDD8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

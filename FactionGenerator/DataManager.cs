@@ -12,6 +12,7 @@ public static class DataManager
     public static string[] FactionDomainsMilitary;
     public static string[] FactionDomainsMundane;
     public static string[] FactionDomainsMagical;
+    public static string[] FactionDomainsReligious;
     public static string[] FactionGoals;
     public static string[] Virtues;
     public static string[] HighFinances;
@@ -96,6 +97,8 @@ public static class DataManager
                 FactionDomainsMilitary = JsonSerializer.Deserialize<string[]>(File.ReadAllText(Path.Combine(path, "JSONs", "factionDomainsMilitary.JSON")));
             if (File.Exists(Path.Combine(path, "JSONs", "factionDomainsMundane.JSON")))
                 FactionDomainsMundane = JsonSerializer.Deserialize<string[]>(File.ReadAllText(Path.Combine(path, "JSONs", "factionDomainsMundane.JSON")));
+            if (File.Exists(Path.Combine(path, "JSONs", "factionDomainsReligious.JSON")))
+                FactionDomainsReligious = JsonSerializer.Deserialize<string[]>(File.ReadAllText(Path.Combine(path, "JSONs", "factionDomainsReligious.JSON")));
             if (File.Exists(Path.Combine(path, "JSONs", "factionDomainsMagical.JSON")))
                 FactionDomainsMagical = JsonSerializer.Deserialize<string[]>(File.ReadAllText(Path.Combine(path, "JSONs", "factionDomainsMagical.JSON")));
             if (File.Exists(Path.Combine(path, "JSONs", "Virtues.JSON")))
