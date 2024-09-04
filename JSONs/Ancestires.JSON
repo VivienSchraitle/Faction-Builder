@@ -309,7 +309,20 @@
         "SizeAvg": 3.1,
         "SizeDev": 0.4,
         "SkinColor": [
-            "default"
+            "green",
+            "olive",
+            "lime green",
+            "forest green",
+            "teal",
+            "turquoise",
+            "navy",
+            "indigo",
+            "blue",
+            "sky blue",
+            "lavender",
+            "violet",
+            "purple",
+            "pink"
         ],
         "Undertones": [
             "default"
@@ -318,16 +331,16 @@
             "default"
         ],
         "Hairstyles": [
-            "default"
+            "90Bald","Buzz Cut", "Bald on Top Hair on Sides"
         ],
         "EyeColor": [
-            "default"
+            "default", "95Red"
         ],
         "OptionalSpecialTraits": [
             []
         ],
         "CertainSpecialTraits": [
-            []
+            ["Massively Oversized Head"],["Stumpy"],["Scrawny Limbs"],["{AdjectiveSizes} sharply pointy ears"]
         ],
         "Heriatage": [],
         "MaxAge": 60,
