@@ -41,6 +41,7 @@ public static class DataManager
     public static string[] DefaultHairstyles;
     public static string[] DefaultEyeColor;
     public static string[] AdjectiveSizes;
+    public static string[] Classes;
 
     public static List<Ancestry> Ancestries = new();
     public static List<Heritage> Heritages = new();
@@ -89,60 +90,60 @@ public static class DataManager
             string path = Directory.GetCurrentDirectory();
             path = Directory.GetParent(path).ToString();
 
-            if (File.Exists(Path.Combine(path, "JSONs", "FactionAttribute.JSON")))
-                Attribute = JsonSerializer.Deserialize<string[]>(File.ReadAllText(Path.Combine(path, "JSONs", "FactionAttribute.JSON")));
-            if (File.Exists(Path.Combine(path, "JSONs", "FactionName.JSON")))
-                MainName = JsonSerializer.Deserialize<string[]>(File.ReadAllText(Path.Combine(path, "JSONs", "FactionName.JSON")));
-            if (File.Exists(Path.Combine(path, "JSONs", "factionDomainsMilitary.JSON")))
-                FactionDomainsMilitary = JsonSerializer.Deserialize<string[]>(File.ReadAllText(Path.Combine(path, "JSONs", "factionDomainsMilitary.JSON")));
-            if (File.Exists(Path.Combine(path, "JSONs", "factionDomainsMundane.JSON")))
-                FactionDomainsMundane = JsonSerializer.Deserialize<string[]>(File.ReadAllText(Path.Combine(path, "JSONs", "factionDomainsMundane.JSON")));
-            if (File.Exists(Path.Combine(path, "JSONs", "factionDomainsReligious.JSON")))
-                FactionDomainsReligious = JsonSerializer.Deserialize<string[]>(File.ReadAllText(Path.Combine(path, "JSONs", "factionDomainsReligious.JSON")));
-            if (File.Exists(Path.Combine(path, "JSONs", "factionDomainsMagical.JSON")))
-                FactionDomainsMagical = JsonSerializer.Deserialize<string[]>(File.ReadAllText(Path.Combine(path, "JSONs", "factionDomainsMagical.JSON")));
-            if (File.Exists(Path.Combine(path, "JSONs", "Virtues.JSON")))
-                Virtues = JsonSerializer.Deserialize<string[]>(File.ReadAllText(Path.Combine(path, "JSONs", "Virtues.JSON")));
-            if (File.Exists(Path.Combine(path, "JSONs", "Goals.JSON")))
-                FactionGoals = JsonSerializer.Deserialize<string[]>(File.ReadAllText(Path.Combine(path, "JSONs", "Goals.JSON")));
-            if (File.Exists(Path.Combine(path, "JSONs", "HighFinances.JSON")))
-                HighFinances = JsonSerializer.Deserialize<string[]>(File.ReadAllText(Path.Combine(path, "JSONs", "HighFinances.JSON")));
-            if (File.Exists(Path.Combine(path, "JSONs", "MidFinances.JSON")))
-                MidFinances = JsonSerializer.Deserialize<string[]>(File.ReadAllText(Path.Combine(path, "JSONs", "MidFinances.JSON")));
-            if (File.Exists(Path.Combine(path, "JSONs", "LowFinances.JSON")))
-                LowFinances = JsonSerializer.Deserialize<string[]>(File.ReadAllText(Path.Combine(path, "JSONs", "LowFinances.JSON")));
-            if (File.Exists(Path.Combine(path, "JSONs", "Doctrines.JSON")))
-                Doctrines = JsonSerializer.Deserialize<string[]>(File.ReadAllText(Path.Combine(path, "JSONs", "Doctrines.JSON")));
-            if (File.Exists(Path.Combine(path, "JSONs", "FactionEssence.JSON")))
-                FactionEssence = JsonSerializer.Deserialize<string[]>(File.ReadAllText(Path.Combine(path, "JSONs", "FactionEssence.JSON")));
-            if (File.Exists(Path.Combine(path, "JSONs", "SourceOfPower.JSON")))
-                SourceOfPower = JsonSerializer.Deserialize<string[]>(File.ReadAllText(Path.Combine(path, "JSONs", "SourceOfPower.JSON")));
-            if (File.Exists(Path.Combine(path, "JSONs", "VotingType.JSON")))
-                VotingType = JsonSerializer.Deserialize<string[]>(File.ReadAllText(Path.Combine(path, "JSONs", "VotingType.JSON")));
-            if (File.Exists(Path.Combine(path, "JSONs", "OliType.JSON")))
-                OliType = JsonSerializer.Deserialize<string[]>(File.ReadAllText(Path.Combine(path, "JSONs", "OliType.JSON")));
-            if (File.Exists(Path.Combine(path, "JSONs", "OliDemoVotingResults.JSON")))
-                OliDemoVotingResults = JsonSerializer.Deserialize<string[]>(File.ReadAllText(Path.Combine(path, "JSONs", "OliDemoVotingResults.JSON")));
-            if (File.Exists(Path.Combine(path, "JSONs", "AutocracyType.JSON")))
-                AutocracyType = JsonSerializer.Deserialize<string[]>(File.ReadAllText(Path.Combine(path, "JSONs", "AutocracyType.JSON")));
-            if (File.Exists(Path.Combine(path, "JSONs", "JoinRitualSimple.JSON")))
-                JoinRitualSimple = JsonSerializer.Deserialize<string[]>(File.ReadAllText(Path.Combine(path, "JSONs", "JoinRitualSimple.JSON")));
-            if (File.Exists(Path.Combine(path, "JSONs", "JoinRitualMedium.JSON")))
-                JoinRitualMedium = JsonSerializer.Deserialize<string[]>(File.ReadAllText(Path.Combine(path, "JSONs", "JoinRitualMedium.JSON")));
-            if (File.Exists(Path.Combine(path, "JSONs", "JoinRitualHard.JSON")))
-                JoinRitualHard = JsonSerializer.Deserialize<string[]>(File.ReadAllText(Path.Combine(path, "JSONs", "JoinRitualHard.JSON")));
-            if (File.Exists(Path.Combine(path, "JSONs", "Reputation.JSON")))
-                Reputation = JsonSerializer.Deserialize<string[]>(File.ReadAllText(Path.Combine(path, "JSONs", "Reputation.JSON")));
-            if (File.Exists(Path.Combine(path, "JSONs", "Size.JSON")))
-                Size = JsonSerializer.Deserialize<string[]>(File.ReadAllText(Path.Combine(path, "JSONs", "Size.JSON")));
-            if (File.Exists(Path.Combine(path, "JSONs", "Wealth.JSON")))
-                Wealth = JsonSerializer.Deserialize<string[]>(File.ReadAllText(Path.Combine(path, "JSONs", "Wealth.JSON")));
-            if (File.Exists(Path.Combine(path, "JSONs", "MagicalInclination.JSON")))
-                MagicalInclination = JsonSerializer.Deserialize<string[]>(File.ReadAllText(Path.Combine(path, "JSONs", "MagicalInclination.JSON")));
-            if (File.Exists(Path.Combine(path, "JSONs", "MilitaryInclination.JSON")))
-                MilitaryInclination = JsonSerializer.Deserialize<string[]>(File.ReadAllText(Path.Combine(path, "JSONs", "MilitaryInclination.JSON")));
-            if (File.Exists(Path.Combine(path, "JSONs", "Intensity.JSON")))
-                Intensity = JsonSerializer.Deserialize<string[]>(File.ReadAllText(Path.Combine(path, "JSONs", "Intensity.JSON")));
+            if (File.Exists(Path.Combine(path, "JSONs", "Faction", "FactionAttribute.JSON")))
+                Attribute = JsonSerializer.Deserialize<string[]>(File.ReadAllText(Path.Combine(path, "JSONs", "Faction", "FactionAttribute.JSON")));
+            if (File.Exists(Path.Combine(path, "JSONs", "Faction", "FactionName.JSON")))
+                MainName = JsonSerializer.Deserialize<string[]>(File.ReadAllText(Path.Combine(path, "JSONs", "Faction", "FactionName.JSON")));
+            if (File.Exists(Path.Combine(path, "JSONs", "Faction", "factionDomainsMilitary.JSON")))
+                FactionDomainsMilitary = JsonSerializer.Deserialize<string[]>(File.ReadAllText(Path.Combine(path, "JSONs", "Faction", "factionDomainsMilitary.JSON")));
+            if (File.Exists(Path.Combine(path, "JSONs", "Faction", "factionDomainsMundane.JSON")))
+                FactionDomainsMundane = JsonSerializer.Deserialize<string[]>(File.ReadAllText(Path.Combine(path, "JSONs", "Faction", "factionDomainsMundane.JSON")));
+            if (File.Exists(Path.Combine(path, "JSONs", "Faction", "factionDomainsReligious.JSON")))
+                FactionDomainsReligious = JsonSerializer.Deserialize<string[]>(File.ReadAllText(Path.Combine(path, "JSONs", "Faction", "factionDomainsReligious.JSON")));
+            if (File.Exists(Path.Combine(path, "JSONs", "Faction", "factionDomainsMagical.JSON")))
+                FactionDomainsMagical = JsonSerializer.Deserialize<string[]>(File.ReadAllText(Path.Combine(path, "JSONs", "Faction", "factionDomainsMagical.JSON")));
+            if (File.Exists(Path.Combine(path, "JSONs", "Faction", "Virtues.JSON")))
+                Virtues = JsonSerializer.Deserialize<string[]>(File.ReadAllText(Path.Combine(path, "JSONs", "Faction", "Virtues.JSON")));
+            if (File.Exists(Path.Combine(path, "JSONs", "Faction", "Goals.JSON")))
+                FactionGoals = JsonSerializer.Deserialize<string[]>(File.ReadAllText(Path.Combine(path, "JSONs", "Faction", "Goals.JSON")));
+            if (File.Exists(Path.Combine(path, "JSONs", "Faction", "HighFinances.JSON")))
+                HighFinances = JsonSerializer.Deserialize<string[]>(File.ReadAllText(Path.Combine(path, "JSONs", "Faction", "HighFinances.JSON")));
+            if (File.Exists(Path.Combine(path, "JSONs", "Faction", "MidFinances.JSON")))
+                MidFinances = JsonSerializer.Deserialize<string[]>(File.ReadAllText(Path.Combine(path, "JSONs", "Faction", "MidFinances.JSON")));
+            if (File.Exists(Path.Combine(path, "JSONs", "Faction", "LowFinances.JSON")))
+                LowFinances = JsonSerializer.Deserialize<string[]>(File.ReadAllText(Path.Combine(path, "JSONs", "Faction", "LowFinances.JSON")));
+            if (File.Exists(Path.Combine(path, "JSONs", "Faction", "Doctrines.JSON")))
+                Doctrines = JsonSerializer.Deserialize<string[]>(File.ReadAllText(Path.Combine(path, "JSONs", "Faction", "Doctrines.JSON")));
+            if (File.Exists(Path.Combine(path, "JSONs", "Faction", "FactionEssence.JSON")))
+                FactionEssence = JsonSerializer.Deserialize<string[]>(File.ReadAllText(Path.Combine(path, "JSONs", "Faction", "FactionEssence.JSON")));
+            if (File.Exists(Path.Combine(path, "JSONs", "Faction", "SourceOfPower.JSON")))
+                SourceOfPower = JsonSerializer.Deserialize<string[]>(File.ReadAllText(Path.Combine(path, "JSONs", "Faction", "SourceOfPower.JSON")));
+            if (File.Exists(Path.Combine(path, "JSONs", "Faction", "VotingType.JSON")))
+                VotingType = JsonSerializer.Deserialize<string[]>(File.ReadAllText(Path.Combine(path, "JSONs", "Faction", "VotingType.JSON")));
+            if (File.Exists(Path.Combine(path, "JSONs", "Faction", "OliType.JSON")))
+                OliType = JsonSerializer.Deserialize<string[]>(File.ReadAllText(Path.Combine(path, "JSONs", "Faction", "OliType.JSON")));
+            if (File.Exists(Path.Combine(path, "JSONs", "Faction", "OliDemoVotingResults.JSON")))
+                OliDemoVotingResults = JsonSerializer.Deserialize<string[]>(File.ReadAllText(Path.Combine(path, "JSONs", "Faction", "OliDemoVotingResults.JSON")));
+            if (File.Exists(Path.Combine(path, "JSONs", "Faction", "AutocracyType.JSON")))
+                AutocracyType = JsonSerializer.Deserialize<string[]>(File.ReadAllText(Path.Combine(path, "JSONs", "Faction", "AutocracyType.JSON")));
+            if (File.Exists(Path.Combine(path, "JSONs", "Faction", "JoinRitualSimple.JSON")))
+                JoinRitualSimple = JsonSerializer.Deserialize<string[]>(File.ReadAllText(Path.Combine(path, "JSONs", "Faction", "JoinRitualSimple.JSON")));
+            if (File.Exists(Path.Combine(path, "JSONs", "Faction", "JoinRitualMedium.JSON")))
+                JoinRitualMedium = JsonSerializer.Deserialize<string[]>(File.ReadAllText(Path.Combine(path, "JSONs", "Faction", "JoinRitualMedium.JSON")));
+            if (File.Exists(Path.Combine(path, "JSONs", "Faction", "JoinRitualHard.JSON")))
+                JoinRitualHard = JsonSerializer.Deserialize<string[]>(File.ReadAllText(Path.Combine(path, "JSONs", "Faction", "JoinRitualHard.JSON")));
+            if (File.Exists(Path.Combine(path, "JSONs", "Faction", "Reputation.JSON")))
+                Reputation = JsonSerializer.Deserialize<string[]>(File.ReadAllText(Path.Combine(path, "JSONs", "Faction", "Reputation.JSON")));
+            if (File.Exists(Path.Combine(path, "JSONs", "Faction", "Size.JSON")))
+                Size = JsonSerializer.Deserialize<string[]>(File.ReadAllText(Path.Combine(path, "JSONs", "Faction", "Size.JSON")));
+            if (File.Exists(Path.Combine(path, "JSONs", "Faction", "Wealth.JSON")))
+                Wealth = JsonSerializer.Deserialize<string[]>(File.ReadAllText(Path.Combine(path, "JSONs", "Faction", "Wealth.JSON")));
+            if (File.Exists(Path.Combine(path, "JSONs", "Faction", "MagicalInclination.JSON")))
+                MagicalInclination = JsonSerializer.Deserialize<string[]>(File.ReadAllText(Path.Combine(path, "JSONs", "Faction", "MagicalInclination.JSON")));
+            if (File.Exists(Path.Combine(path, "JSONs", "Faction", "MilitaryInclination.JSON")))
+                MilitaryInclination = JsonSerializer.Deserialize<string[]>(File.ReadAllText(Path.Combine(path, "JSONs", "Faction", "MilitaryInclination.JSON")));
+            if (File.Exists(Path.Combine(path, "JSONs", "Faction", "Intensity.JSON")))
+                Intensity = JsonSerializer.Deserialize<string[]>(File.ReadAllText(Path.Combine(path, "JSONs", "Faction", "Intensity.JSON")));
         }
         catch (JsonException ex)
         {
@@ -158,11 +159,28 @@ public static class DataManager
 
     private static void LoadPeopleData()
     {
+        try
+        {
         string path = Directory.GetCurrentDirectory();
         path = Directory.GetParent(path).ToString();
+        if (File.Exists(Path.Combine(path, "JSONs", "People", "Ancestires.JSON")))
+            LoadAncestries(Path.Combine(path, "JSONs", "People", "Ancestires.JSON"));
+        if (File.Exists(Path.Combine(path, "JSONs", "People", "Heriatage.JSON")))
+            LoadHeritages(Path.Combine(path, "JSONs", "People", "Heriatage.JSON"));
+        if (File.Exists(Path.Combine(path, "JSONs", "People", "Classes.JSON")))
+            Classes = JsonSerializer.Deserialize<string[]>(File.ReadAllText(Path.Combine(path, "JSONs", "People", "Classes.JSON")));
 
-        LoadAncestries(Path.Combine(path, "JSONs", "Ancestires.JSON"));
-        LoadHeritages(Path.Combine(path, "JSONs", "Heriatage.JSON"));
+        }
+        catch (JsonException ex)
+        {
+            Console.WriteLine("Error during JSON deserialization: " + ex.Message);
+            Environment.Exit(0);
+        }
+        catch (IOException ex)
+        {
+            Console.WriteLine("File I/O error: " + ex.Message);
+            Environment.Exit(0);
+        }
     }
     private static void LoadAncestries(string filePath)
     {
