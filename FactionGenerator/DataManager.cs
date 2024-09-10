@@ -1,6 +1,8 @@
 // DataManager.cs
 using System;
 using System.Collections.Generic;
+using System.Configuration.Assemblies;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text.Json;
@@ -15,9 +17,9 @@ public static class DataManager
     public static string[] FactionDomainsReligious;
     public static string[] FactionGoals;
     public static string[] Virtues;
-    public static string[] HighFinances;
-    public static string[] MidFinances;
-    public static string[] LowFinances;
+    public static Dictionary<string, List<string>> HighJobMappings;
+    public static Dictionary<string, List<string>> MidJobMappings;
+    public static Dictionary<string, List<string>> LowJobMappings;
     public static string[] Doctrines;
     public static string[] FactionEssence;
     public static string[] SourceOfPower;
@@ -107,11 +109,11 @@ public static class DataManager
             if (File.Exists(Path.Combine(path, "JSONs", "Faction", "Goals.JSON")))
                 FactionGoals = JsonSerializer.Deserialize<string[]>(File.ReadAllText(Path.Combine(path, "JSONs", "Faction", "Goals.JSON")));
             if (File.Exists(Path.Combine(path, "JSONs", "Faction", "HighFinances.JSON")))
-                HighFinances = JsonSerializer.Deserialize<string[]>(File.ReadAllText(Path.Combine(path, "JSONs", "Faction", "HighFinances.JSON")));
+                HighJobMappings = JsonSerializer.Deserialize<Dictionary<string, List<string>>>(File.ReadAllText(Path.Combine(path, "JSONs", "Faction", "HighFinances.JSON")));
             if (File.Exists(Path.Combine(path, "JSONs", "Faction", "MidFinances.JSON")))
-                MidFinances = JsonSerializer.Deserialize<string[]>(File.ReadAllText(Path.Combine(path, "JSONs", "Faction", "MidFinances.JSON")));
+                MidJobMappings = JsonSerializer.Deserialize<Dictionary<string, List<string>>>(File.ReadAllText(Path.Combine(path, "JSONs", "Faction", "MidFinances.JSON")));
             if (File.Exists(Path.Combine(path, "JSONs", "Faction", "LowFinances.JSON")))
-                LowFinances = JsonSerializer.Deserialize<string[]>(File.ReadAllText(Path.Combine(path, "JSONs", "Faction", "LowFinances.JSON")));
+                LowJobMappings = JsonSerializer.Deserialize<Dictionary<string, List<string>>>(File.ReadAllText(Path.Combine(path, "JSONs", "Faction", "LowFinances.JSON")));
             if (File.Exists(Path.Combine(path, "JSONs", "Faction", "Doctrines.JSON")))
                 Doctrines = JsonSerializer.Deserialize<string[]>(File.ReadAllText(Path.Combine(path, "JSONs", "Faction", "Doctrines.JSON")));
             if (File.Exists(Path.Combine(path, "JSONs", "Faction", "FactionEssence.JSON")))
@@ -181,6 +183,7 @@ public static class DataManager
             Console.WriteLine("File I/O error: " + ex.Message);
             Environment.Exit(0);
         }
+        ConvertAncestriesToHeritages();
     }
     private static void LoadAncestries(string filePath)
     {
@@ -301,6 +304,24 @@ public static class DataManager
         }
     }
 
+    private static void ConvertAncestriesToHeritages()
+    {
+        foreach(Ancestry ances in Ancestries)
+        {
+            Heritage helper = new Heritage();
+            helper.Name = ances.Name;
+            helper.LH = ances.LH;
+            helper.CertainSpecialTraits = ances.CertainSpecialTraits;
+            helper.EyeColor = ances.EyeColor;
+            helper.HairColor = ances.HairColor;
+            helper.Hairstyles = ances.Hairstyles;
+            helper.OptionalSpecialTraits = ances.OptionalSpecialTraits;
+            helper.SkinColor = ances.SkinColor;
+            helper.Undertones = ances.Undertones;
+            Heritages.Add(helper);
+        }
+    }
+    
     // Helper methods for deserialization and defaults
 
     private static string[] DeserializeJsonArray(JsonElement jsonElement)

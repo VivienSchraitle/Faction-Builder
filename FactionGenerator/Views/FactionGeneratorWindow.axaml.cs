@@ -1,4 +1,6 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
@@ -12,7 +14,14 @@ public partial class FactionGeneratorWindow : Window
     private Random rnd = new();
     public FactionGeneratorWindow()
     {
+        
         InitializeComponent();
+        string[] items = new string[] { "Random", "Mixed" }.Concat(DataManager.Heritages.Select(Heritages => Heritages.Name).ToArray()).ToArray();
+
+        PrimaryAncestryTypeDropdown.ItemsSource = items;
+        SecondaryAncestryTypeDropdown.ItemsSource =items;
+        PrimaryAncestryTypeDropdown.SelectedIndex = 0;
+        SecondaryAncestryTypeDropdown.SelectedIndex = 1;
     }
             private void GenerateFactionClick(object sender, RoutedEventArgs e)
         {
@@ -22,20 +31,24 @@ public partial class FactionGeneratorWindow : Window
 
                 string[] inputParts = new string[]
                 {
-                    #pragma warning disable
+                    //#pragma warning disable
                     ScaleInput.Text,
                     FundsInput.Text,
                     MagicInput.Text,
                     MilitaryInput.Text,
                     ReligionInput.Text,
                     ReputationInput.Text,
-                    IntensityInput.Text
-                    
-                    #pragma warning enable
+                    PrimaryAncestryTypeChance.Text,
+                    SecondaryAncestryTypeChance.Text,
+                    IntensityInput.Text,
+                    PrimaryAncestryTypeDropdown.SelectedItem.ToString(),
+                    SecondaryAncestryTypeDropdown.SelectedItem.ToString()
+                    //#pragma warning enable
                 };
 
                 factionBuilder.GenerateFaction(inputParts);
                 FactionDetails.Text = factionBuilder.GetFactionDetails();
+                
             }
             catch (Exception ex)
             {
@@ -78,6 +91,8 @@ public partial class FactionGeneratorWindow : Window
             MilitaryInput.Text = rnd.Next(0,101).ToString();
             ReligionInput.Text = rnd.Next(0,101).ToString();
             ReputationInput.Text = rnd.Next(0,101).ToString();
+            PrimaryAncestryTypeChance.Text = rnd.Next(0,101).ToString();
+            SecondaryAncestryTypeChance.Text = rnd.Next(0,101).ToString();
             IntensityInput.Text = rnd.Next(0,6).ToString();
         }
 

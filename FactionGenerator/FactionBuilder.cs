@@ -4,6 +4,8 @@ using System.Linq;
 
 public class FactionBuilder
 {
+    private string primeHeritage = "";
+    private string secondHeritage = "";
     private string name = "";
     private string goals = "";
     private string domains = "";
@@ -12,11 +14,15 @@ public class FactionBuilder
     private string standing = "";
     private string[] parts = Array.Empty<string>();
     private Random rnd = new();
-    private int numParameters = 7;
+    private int numParameters = 9;
     private Faction myFaction = null!;
 
     public void GenerateFaction(string[] inputParts)
     {
+        primeHeritage = inputParts[inputParts.Length - 1];
+        inputParts = inputParts.Take(inputParts.Count() - 1).ToArray();
+        secondHeritage = inputParts[inputParts.Length - 1];
+        inputParts = inputParts.Take(inputParts.Count() - 1).ToArray();
         if (inputParts == null || inputParts.Length != numParameters)
         {
             GenerateRandomValues();
@@ -42,7 +48,7 @@ public class FactionBuilder
 
 
         int[] inParameters = parts.Select(int.Parse).ToArray();
-        myFaction = new Faction(inParameters[0], inParameters[1], inParameters[2], inParameters[3], inParameters[4], inParameters[5], inParameters[6]);
+        myFaction = new Faction(inParameters[0], inParameters[1], inParameters[2], inParameters[3], inParameters[4], inParameters[5], inParameters[6], inParameters[7], inParameters[8], primeHeritage, secondHeritage);
 
         UpdateFactionData();
     }
@@ -91,15 +97,21 @@ public class FactionBuilder
         }
         parts[numParameters - 1] = rnd.Next(1, 6).ToString();
     }
-private string GetRandomValueForParameter(int index)
-{
-    switch (index)
+    private string GetRandomValueForParameter(int index)
     {
-        case 0 or 1 or 2 or 3 or 4 or 5: return rnd.Next(0, 101).ToString();
-        case 6: return rnd.Next(0, 6).ToString();
-        default: throw new ArgumentOutOfRangeException("Invalid parameter index.");
+        if (index < numParameters - 1)
+        {
+            return rnd.Next(0, 101).ToString();
+        }
+        else if (index == numParameters - 1)
+        {
+            return rnd.Next(0, 6).ToString();
+        }
+        else
+        {
+            throw new ArgumentOutOfRangeException("Invalid parameter index.");
+        }
     }
-}
     private void UpdateFactionData()
     {
         name = myFaction.GetName();

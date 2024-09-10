@@ -1,5 +1,8 @@
 // Faction.cs
 using System;
+using System.Collections.Generic;
+using System.Configuration.Assemblies;
+using System.Linq;
 
 public class Faction
 {
@@ -10,7 +13,12 @@ public class Faction
     public int FinanceScore { get; private set; }
     public int ReputationScore { get; private set; }
     public int ReligionScore { get; private set; }
-
+    public DataManager.Heritage primHeritage;
+    public DataManager.Ancestry primAncestry;
+    public int primPercent;
+    public DataManager.Heritage secHeritage;
+    public DataManager.Ancestry secAncestry;
+    public int secPercent;
     public string[]? GoalsArray { get; private set; }
     public string[]? DomainsArray { get; private set; }
     // Leadership style as a single string
@@ -26,7 +34,7 @@ public class Faction
     public string[]? Values { get; private set; }
 
     // Money sources as an array of strings
-    public string[]? MoneySources { get; private set; }
+    public Dictionary<string, List<string>>? MoneySources { get; private set; }
 
     // Doctrines as an array of strings
     public string[]? Doctrines { get; private set; }
@@ -36,15 +44,33 @@ public class Faction
 
     private Random rnd = new();
 
-    public Faction(int scale, int money, int magic, int military, int religious, int reputation, int intensity )
+    public Faction(int scale, int money, int magic, int military, int religious, int reputation,int pPercent, int sPercent, int intensity, string primHeri, string secoHeri)
     {
         MagicScore = magic;
         MilitaristicScore = military;
         FinanceScore = money;
         SizeScale = scale;
         ReputationScore = reputation;
+        primPercent = pPercent;
+        secPercent = sPercent;
         IntensityScore = intensity;
         ReligionScore = religious;
+        if (DataManager.Ancestries.Exists(a => a.Name.Equals(primHeri)))
+        {
+            primAncestry = DataManager.Ancestries.Where(h => h.Name.Equals(primHeri)).First();
+        }
+        else if (DataManager.Heritages.Exists(a => a.Name.Equals(primHeri)))
+        {
+            primHeritage = DataManager.Heritages.Where(h => h.Name.Equals(primHeri)).First();
+        }
+        if (DataManager.Ancestries.Exists(a => a.Name.Equals(secoHeri)))
+        {
+            secAncestry = DataManager.Ancestries.Where(h => h.Name.Equals(secoHeri)).First();
+        }
+        else if (DataManager.Heritages.Exists(a => a.Name.Equals(secoHeri)))
+        {
+            secHeritage = DataManager.Heritages.Where(h => h.Name.Equals(secoHeri)).First();
+        }
     }
 
     public string GetName()
@@ -217,13 +243,17 @@ public class Faction
 
     public string GetParameters()
     {
-        int valuesCount = SizeScale / 10 + IntensityScore;
-        int moneyCount = (SizeScale + FinanceScore) / 10;
+        int valuesCount = Math.Clamp(SizeScale / 10 + IntensityScore, 1, 7);
+        int moneyCount = Math.Clamp((SizeScale + FinanceScore) / 20, 1, 7);
         int doctrineCount = IntensityScore;
 
         Values = new string[valuesCount];
-        MoneySources = new string[moneyCount];
+        MoneySources = new();
         Doctrines = new string[doctrineCount];
+
+        MoneySources.Add("Low", new List<string>());
+        MoneySources.Add("Mid", new List<string>());
+        MoneySources.Add("High", new List<string>());
 
         string values = "Their values are: \n";
         string money = "They finance themselves by: \n";
@@ -239,17 +269,31 @@ public class Faction
         {
             int rndScore = rnd.Next(101);
             int finances = rndScore + 3 * FinanceScore - reducer * 7;
+
+            string randomJob;
+            string jobCategory;
             if (finances < 70)
-                MoneySources[i] = DataManager.LowFinances[rnd.NextInt64(DataManager.LowFinances.Length)];
+            {
+                jobCategory = "Low";
+                randomJob = GetWeightedRandomGeneralJob(DataManager.LowJobMappings);
+            }
             else if (finances < 270)
-                MoneySources[i] = DataManager.MidFinances[rnd.NextInt64(DataManager.MidFinances.Length)];
+            {
+                jobCategory = "Mid";
+                randomJob = GetWeightedRandomGeneralJob(DataManager.MidJobMappings);
+            }
             else
             {
-                MoneySources[i] = DataManager.HighFinances[rnd.NextInt64(DataManager.HighFinances.Length)];
+                jobCategory = "High";
+                randomJob = GetWeightedRandomGeneralJob(DataManager.HighJobMappings);
                 reducer += 1;
             }
-            money += MoneySources[i] + ", ";
+
+            // Add the job to the value array for the corresponding jobCategory key in MoneySources
+            MoneySources[jobCategory].Add(randomJob);
         }
+
+
         for (int i = 0; i < doctrineCount; i++)
         {
             Doctrines[i] = DataManager.Doctrines[rnd.NextInt64(DataManager.Doctrines.Length)];
@@ -316,5 +360,32 @@ public class Faction
             MilitaristicScore = Math.Min(MilitaristicScore, 100);
             FinanceScore = Math.Min(FinanceScore, 100);
         }
+    }
+    public string GetWeightedRandomGeneralJob(Dictionary<string, List<string>> baseDir)
+    {
+        var generalJobs = new List<string>(baseDir.Keys);
+
+        // Calculate the total weight (total number of specific jobs across all general jobs)
+        int totalWeight = 0;
+        foreach (var job in generalJobs)
+        {
+            totalWeight += baseDir[job].Count;  // Weight is the number of specific jobs
+        }
+
+        // Generate a random number between 0 and totalWeight
+        int randomWeight = rnd.Next(totalWeight);
+
+        // Select the general job based on the random weight
+        int cumulativeWeight = 0;
+        foreach (var job in generalJobs)
+        {
+            cumulativeWeight += baseDir[job].Count;
+            if (randomWeight < cumulativeWeight)
+            {
+                return job;  // Return the general job selected based on its weight
+            }
+        }
+
+        return null;  // Default return value (should not reach here)
     }
 }

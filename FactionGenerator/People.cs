@@ -13,7 +13,11 @@ public class People
     private string MyClass;
     private string MyJob;
     private string MyApperance;
+    public int FinanceScore { get; private set; }
+    public int ReputationScore { get; private set; }
+    public int ReligionScore { get; private set; }
     Random random = new Random();
+
     public DataManager.Ancestry getAncestry(string[] args)
     {
         int totalLikelihoodAnces = DataManager.Ancestries.Sum(a => a.LH);
@@ -59,14 +63,13 @@ public class People
         baseNumber = Math.Clamp(baseNumber, 0, DataManager.Classes.Length - 1);
         return DataManager.Classes[baseNumber];
     }
-    public string getJob(int setJob) 
+    public string getJob(Faction myFaction = null) 
     {
-        switch(setJob)
+        if (myFaction != null)
         {
-            default:
-            return "";
+
         }
-        
+        return "";
     }
     public string getApperance()
     {
