@@ -1,45 +1,127 @@
-[
-    "Trade in exotic goods",
-    "Magical item crafting",
-    "Alchemical supply chain",
-    "Monster hunting and harvesting",
-    "Treasure hunting and recovery",
-    "Artifact acquisition and sale",
-    "Gem and jewel crafting",
-    "Mercenary work and bodyguard services",
-    "Enchanted item creation and repair",
-    "Spellcasting services",
-    "Taxation and tribute collection",
-    "Sponsorship by a noble",
-    "Shipbuilding and naval contracting",
-    "Large-scale land ownership and farming",
-    "Large-scale land ownership and farming",
-    "High-end furniture making",
-    "Banking and money lending",
-    "Perfumery",
-    "Cosmetics",
-    "Auction houses",
-    "Royal or noble patronage",
-    "Court advisor or royal counsel",
-    "Private education for nobility",
-    "Master craftsperson in luxury goods",
-    "Large-scale brewing or distillery ownership",
-    "Large-scale brewing or distillery ownership",
-    "Mining operations and mineral rights",
-    "Mining operations and mineral rights",
-    "International trade negotiations",
-    "Exclusive trade agreements",
-    "Courtship services for nobility",
-    "Professional guild leadership",
-    "High-end textile production (silk, velvet)",
-    "Estate management for a noble family",
-    "Estate management for a noble family",
-    "Bridge building and toll collection",
-    "Maritime exploration and colonization",
-    "Astrology and divination for nobility",
-    "Commissioned portrait painting",
-    "Luxury goods merchant",
-    "Custom weapon forging for knights",
-    "Rare book dealing",
-    "Antique dealing"
-]
+{
+    "Trade in exotic goods": [
+        "Exotic goods trader"
+    ],
+    "Magical item crafting": [
+        "Magic item crafter"
+    ],
+    "Alchemical supply chain": [
+        "Alchemical supplier"
+    ],
+    "Monster hunting and harvesting": [
+        "Monster hunter"
+    ],
+    "Treasure hunting and recovery": [
+        "Treasure hunter"
+    ],
+    "Artifact acquisition and sale": [
+        "Artifact dealer"
+    ],
+    "Gem and jewel crafting": [
+        "Jeweler"
+    ],
+    "Mercenary work and bodyguard services": [
+        "Bodyguard"
+    ],
+    "Enchanted item creation and repair": [
+        "Enchanted item craftsman"
+    ],
+    "Spellcasting services": [
+        "Spellcaster for hire"
+    ],
+    "Taxation and tribute collection": [
+        "Tax collector"
+    ],
+    "Sponsorship by a noble": [
+        "Noble's sponsor"
+    ],
+    "Shipbuilding and naval contracting": [
+        "Shipwright"
+    ],
+    "Large-scale land ownership and farming": [
+        "Estate owner and farmer",
+        "Land baron"
+    ],
+    "High-end furniture making": [
+        "Luxury furniture maker"
+    ],
+    "Banking and money lending": [
+        "Banker",
+        "Money lender"
+    ],
+    "Perfumery": [
+        "Perfumer"
+    ],
+    "Cosmetics": [
+        "Cosmetics maker"
+    ],
+    "Auction houses": [
+        "Auctioneer"
+    ],
+    "Royal or noble patronage": [
+        "Royal patron"
+    ],
+    "Court advisor or royal counsel": [
+        "Court advisor"
+    ],
+    "Private education for nobility": [
+        "Private tutor for nobles"
+    ],
+    "Master craftsperson in luxury goods": [
+        "Master artisan in luxury goods"
+    ],
+    "Large-scale brewing or distillery ownership": [
+        "Brewery owner",
+        "Distillery owner"
+    ],
+    "Mining operations and mineral rights": [
+        "Mine operator",
+        "Mineral rights owner"
+    ],
+    "International trade negotiations": [
+        "Trade negotiator"
+    ],
+    "Exclusive trade agreements": [
+        "Exclusive trade dealer"
+    ],
+    "Courtship services for nobility": [
+        "Matchmaker for nobility"
+    ],
+    "Professional guild leadership": [
+        "Guild leader"
+    ],
+    "High-end textile production (silk, velvet)": [
+        "Silk and velvet producer"
+    ],
+    "Estate management for a noble family": [
+        "Estate manager",
+        "Estate steward"
+    ],
+    "Bridge building and toll collection": [
+        "Bridge builder",
+        "Toll operator"
+    ],
+    "Maritime exploration and colonization": [
+        "Maritime explorer",
+        "Colonial leader"
+    ],
+    "Astrology and divination for nobility": [
+        "Astrologer",
+        "Diviner for nobles"
+    ],
+    "Commissioned portrait painting": [
+        "Portrait painter"
+    ],
+    "Luxury goods merchant": [
+        "Luxury merchant"
+    ],
+    "Custom weapon forging for knights": [
+        "Custom weapon smith"
+    ],
+    "Rare book dealing": [
+        "Rare book dealer"
+    ],
+    "Antique dealing": [
+        "Antique merchant"
+    ]
+}

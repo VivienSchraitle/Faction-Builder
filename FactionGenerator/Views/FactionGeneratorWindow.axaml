@@ -3,10 +3,14 @@
         xmlns:vm="using:FactionGenerator.ViewModels"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:avalon="clr-namespace:Avalonia.Controls;assembly=Avalonia.Controls"  
+ 
+
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="FactionGenerator.Views.FactionGeneratorWindow"
         x:DataType="vm:MainWindowViewModel"
         Title="FactionGenerator">
+
 
     <Design.DataContext>
         <!-- This only sets the DataContext for the previewer in an IDE,
@@ -17,38 +21,45 @@
 <StackPanel Margin="20">
 
         <Grid ShowGridLines="False" Margin="5"
-            ColumnDefinitions="15*, 14*, 14*, 14*, 14*, 14*, 15*"
+            ColumnDefinitions="10*,10*,10*,10*,10*,10*,10*,10*,10*,10*"
             RowDefinitions="34, 34, 34">          
 
 
-            <TextBlock Text="Scale (1-100):" FontSize="14" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Grid.Row="0"/>
+            <TextBlock TextWrapping="Wrap" Text="Scale (1-100):" FontSize="14" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Grid.Row="0"/>
             <TextBox x:Name="ScaleInput" Width="60" HorizontalAlignment="Center" Grid.Column="0" Grid.Row="1"/>
             <Button Content="Rnd" Click="RandomScale" Width="45" HorizontalAlignment="Center" Grid.Column="0" Grid.Row="2"/>
 
-            <TextBlock Text="Funds (1-100):" FontSize="14" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Grid.Row="0"/>
+            <TextBlock TextWrapping="Wrap" Text="Funds (1-100):" FontSize="14" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Grid.Row="0"/>
             <TextBox x:Name="FundsInput" Width="60" HorizontalAlignment="Center" Grid.Column="1" Grid.Row="1"/>
             <Button Content="Rnd" Click="RandomFunds" Width="45" HorizontalAlignment="Center" Grid.Column="1" Grid.Row="2"/>
 
-            <TextBlock Text="Magic Score (1-100):" FontSize="14" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="2"/>
+            <TextBlock TextWrapping="Wrap" Text="Magic Score (1-100):" FontSize="14" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="2"/>
             <TextBox x:Name="MagicInput" Width="60" HorizontalAlignment="Center" Grid.Column="2" Grid.Row="1"/>
             <Button Content="Rnd" Click="RandomMagic" Width="45" HorizontalAlignment="Center" Grid.Column="2" Grid.Row="2"/>
 
-            <TextBlock Text="Military Score (1-100):" FontSize="14" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="3" Grid.Row="0"/>
+            <TextBlock TextWrapping="Wrap" Text="Military Score (1-100):" FontSize="14" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="3" Grid.Row="0"/>
             <TextBox x:Name="MilitaryInput" Width="60" HorizontalAlignment="Center" Grid.Column="3" Grid.Row="1"/>
             <Button Content="Rnd" Click="RandomMilitary" Width="45" HorizontalAlignment="Center" Grid.Column="3" Grid.Row="2"/>
 
-            <TextBlock Text="Religion Score (1-100):" FontSize="14" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="4" Grid.Row="0"/>
+            <TextBlock TextWrapping="Wrap" Text="Religion Score (1-100):" FontSize="14" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="4" Grid.Row="0"/>
             <TextBox x:Name="ReligionInput" Width="60" HorizontalAlignment="Center" Grid.Column="4" Grid.Row="1"/>
             <Button Content="Rnd" Click="RandomReligion" Width="45" HorizontalAlignment="Center" Grid.Column="4" Grid.Row="2"/>
 
-            <TextBlock Text="Reputation (1-100):" FontSize="14" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="5" Grid.Row="0"/>
+            <TextBlock TextWrapping="Wrap" Text="Reputation (1-100):" FontSize="14" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="5" Grid.Row="0"/>
             <TextBox x:Name="ReputationInput" Width="60" HorizontalAlignment="Center" Grid.Column="5" Grid.Row="1"/>
             <Button Content="Rnd" Click="RandomReputation" Width="45" HorizontalAlignment="Center" Grid.Column="5" Grid.Row="2"/>
 
-            <TextBlock Text="Intensity (1-5):" FontSize="14" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="6" Grid.Row="0"/>
+            <TextBlock TextWrapping="Wrap" Text="Intensity (1-5):" FontSize="14" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="6" Grid.Row="0"/>
             <TextBox x:Name="IntensityInput" Width="60" HorizontalAlignment="Center" Grid.Column="6" Grid.Row="1"/>
             <Button Content="Rnd" Click="RandomIntensity" Width="45" HorizontalAlignment="Center" Grid.Column="6" Grid.Row="2"/>
 
+            <TextBlock TextWrapping="Wrap" Text="Primary Ancestry Type and Percent:" FontSize="14" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="7" Grid.Row="0"/>
+            <ComboBox x:Name="PrimaryAncestryTypeDropdown" Width="120" HorizontalAlignment="Center" Grid.Column="7" Grid.Row="1"/>
+            <TextBox x:Name="PrimaryAncestryTypeChance" Width="60" HorizontalAlignment="Center" Grid.Column="7" Grid.Row="2"/>
+
+            <TextBlock TextWrapping="Wrap" Text="Secondary Ancestry Type and Percent:" FontSize="14" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="8" Grid.Row="0"/>
+            <ComboBox x:Name="SecondaryAncestryTypeDropdown" Width="120" HorizontalAlignment="Center" Grid.Column="8" Grid.Row="1"/>
+            <TextBox x:Name="SecondaryAncestryTypeChance" Width="60" HorizontalAlignment="Center" Grid.Column="8" Grid.Row="2"/>
 
 
         </Grid>

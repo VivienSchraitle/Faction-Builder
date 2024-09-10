@@ -1,177 +1,244 @@
-[
-    "Basic farming",
-    "Basic farming",
-    "Basic farming",
-    "Basic farming",
-    "Basic farming",
-    "Simple craftsmanship",
-    "Simple craftsmanship",
-    "Simple craftsmanship",
-    "Simple craftsmanship",
-    "Innkeeping",
-    "Innkeeping",
-    "Innkeeping",
-    "Cobblering",
-    "Cobblering",
-    "Cobblering",
-    "Street performance",
-    "Street performance",
-    "Street performance",
-    "Street performance",
-    "Trash collection",
-    "Trash collection",
-    "Trash collection",
-    "Trash collection",
-    "Delivery services",
-    "Delivery services",
-    "Delivery services",
-    "Delivery services",
-    "Delivery services",
-    "Cooking",
-    "Cooking",
-    "Cooking",
-    "Cooking",
-    "Cooking",
-    "Tailoring",
-    "Tailoring",
-    "Tailoring",
-    "Tailoring",
-    "Tailoring",
-    "Common guild membership",
-    "Common guild membership",
-    "Common guild membership",
-    "Common guild membership",
-    "Hairdressing",
-    "Hairdressing",
-    "Hairdressing",
-    "Hairdressing",
-    "Hairdressing",
-    "Butchering",
-    "Butchering",
-    "Butchering",
-    "Butchering",
-    "Butchering",
-    "Barbering",
-    "Barbering",
-    "Barbering",
-    "Barbering",
-    "Barbering",
-    "Ratcatching",
-    "Ratcatching",
-    "Ratcatching",
-    "Ratcatching",
-    "Basic woodcutting",
-    "Basic woodcutting",
-    "Basic woodcutting",
-    "Basic woodcutting",
-    "Basic woodcutting",
-    "Mining",
-    "Mining",
-    "Mining",
-    "Mining",
-    "Zookeeping",
-    "Zookeeping",
-    "Zookeeping",
-    "Fisherman",
-    "Fisherman",
-    "Fisherman",
-    "Fisherman",
-    "Trash collection",
-    "Trash collection",
-    "Trash collection",
-    "Trash collection",
-    "Trash collection",
-    "Embroidery",
-    "Embroidery",
-    "Embroidery",
-    "Embroidery",
-    "Tanning",
-    "Tanning",
-    "Tanning",
-    "Tanning",
-    "Shepherding",
-    "Shepherding",
-    "Shepherding",
-    "Shepherding",
-    "Goat herding",
-    "Goat herding",
-    "Goat herding",
-    "Goat herding",
-    "Wood gathering",
-    "Wood gathering",
-    "Wood gathering",
-    "Wood gathering",
-    "Scavenging",
-    "Scavenging",
-    "Scavenging",
-    "Scavenging",
-    "Small-scale fishing",
-    "Small-scale fishing",
-    "Small-scale fishing",
-    "Small-scale fishing",
-    "Day laboring",
-    "Day laboring",
-    "Day laboring",
-    "Day laboring",
-    "Street vending",
-    "Street vending",
-    "Street vending",
-    "Street vending",
-    "Wool spinning",
-    "Wool spinning",
-    "Wool spinning",
-    "Wool spinning",
-    "Basket weaving",
-    "Basket weaving",
-    "Basket weaving",
-    "Basket weaving",
-    "Rope making",
-    "Rope making",
-    "Rope making",
-    "Rope making",
-    "Peat cutting",
-    "Peat cutting",
-    "Peat cutting",
-    "Peat cutting",
-    "Domestic service",
-    "Domestic service",
-    "Domestic service",
-    "Domestic service",
-    "Animal husbandry",
-    "Animal husbandry",
-    "Animal husbandry",
-    "Animal husbandry",
-    "Soap making",
-    "Soap making",
-    "Soap making",
-    "Soap making",
-    "Candle making",
-    "Candle making",
-    "Candle making",
-    "Candle making",
-    "Charcoal burning",
-    "Charcoal burning",
-    "Charcoal burning",
-    "Charcoal burning",
-    "Sackcloth making",
-    "Sackcloth making",
-    "Sackcloth making",
-    "Sackcloth making",
-    "Field hand work",
-    "Field hand work",
-    "Field hand work",
-    "Field hand work",
-    "Chimney sweeping",
-    "Chimney sweeping",
-    "Chimney sweeping",
-    "Chimney sweeping",
-    "Rug making",
-    "Rug making",
-    "Rug making",
-    "Rug making",
-    "Grave digging",
-    "Grave digging",
-    "Pottery",
-    "Pottery",
-    "Pottery"
-]
+{
+    "Basic farming": [
+        "Wheat farming",
+        "Vegetable farming",
+        "Rice farming",
+        "Corn farming",
+        "Mushroom farming"
+    ],
+    "Simple craftsmanship": [
+        "Blacksmithing",
+        "Carpentry",
+        "Leatherworking",
+        "Stone masonry"
+    ],
+    "Innkeeping": [
+        "Innkeeper",
+        "Tavern owner",
+        "Hostel manager"
+    ],
+    "Cobblering": [
+        "Shoemaker",
+        "Bootmaker",
+        "Sandal maker"
+    ],
+    "Street performance": [
+        "Street musician",
+        "Juggler",
+        "Fire breather",
+        "Magician"
+    ],
+    "Trash collection": [
+        "Garbage collector",
+        "Street sweeper",
+        "Waste hauler",
+        "Recycling worker"
+    ],
+    "Delivery services": [
+        "Courier",
+        "Parcel delivery driver",
+        "Messenger",
+        "Bicycle courier",
+        "Freight carrier"
+    ],
+    "Cooking": [
+        "Chef",
+        "Sous chef",
+        "Line cook",
+        "Pastry chef",
+        "Grill cook"
+    ],
+    "Tailoring": [
+        "Tailor",
+        "Seamstress",
+        "Dressmaker",
+        "Alterations specialist",
+        "Costume designer"
+    ],
+    "Hairdressing": [
+        "Hairdresser",
+        "Stylist",
+        "Wig maker",
+        "Salon manager"
+    ],
+    "Butchering": [
+        "Butcher",
+        "Meat cutter",
+        "Slaughterhouse worker",
+        "Poultry butcher",
+        "Fishmonger"
+    ],
+    "Barbering": [
+        "Barber",
+        "Beard trimmer",
+        "Hair stylist",
+        "Shaving specialist",
+        "Men's grooming service"
+    ],
+    "Ratcatching": [
+        "Rat catcher",
+        "Pest control worker",
+        "Vermin exterminator",
+        "Mole catcher"
+    ],
+    "Basic woodcutting": [
+        "Lumberjack",
+        "Tree cutter",
+        "Wood splitter",
+        "Firewood supplier"
+    ],
+    "Mining": [
+        "Coal miner",
+        "Ore miner",
+        "Gold prospector",
+        "Stone quarry worker"
+    ],
+    "Zookeeping": [
+        "Zookeeper",
+        "Animal caretaker",
+        "Wildlife rehabilitator"
+    ],
+    "Fisherman": [
+        "Fisherman",
+        "Crab fisher",
+        "Lobster catcher",
+        "Shrimp trawler"
+    ],
+    "Embroidery": [
+        "Embroidery artist",
+        "Needleworker",
+        "Cross-stitcher",
+        "Pattern embroiderer"
+    ],
+    "Tanning": [
+        "Leather tanner",
+        "Hide processor",
+        "Skin curer",
+        "Leather dyeing specialist"
+    ],
+    "Shepherding": [
+        "Shepherd",
+        "Sheep herder",
+        "Wool gatherer"
+    ],
+    "Goat herding": [
+        "Goat herder",
+        "Goat breeder"
+    ],
+    "Wood gathering": [
+        "Wood collector",
+        "Kindling gatherer",
+        "Forest scavenger",
+        "Firewood gatherer"
+    ],
+    "Scavenging": [
+        "Scavenger",
+        "Scrap metal collector",
+        "Junk dealer",
+        "Ragpicker"
+    ],
+    "Small-scale fishing": [
+        "Small-scale fisherman",
+        "Lake fisherman",
+        "River fisherman"
+    ],
+    "Day laboring": [
+        "Day laborer",
+        "Construction worker",
+        "Field hand",
+        "Odd jobs laborer"
+    ],
+    "Street vending": [
+        "Street vendor",
+        "Food stall owner",
+        "Fruit seller",
+        "Street market trader"
+    ],
+    "Wool spinning": [
+        "Wool spinner",
+        "Yarn spinner",
+        "Thread maker",
+        "Weaver"
+    ],
+    "Basket weaving": [
+        "Basket weaver",
+        "Wickerwork artisan",
+        "Reed basket maker",
+        "Bamboo basket weaver"
+    ],
+    "Rope making": [
+        "Rope maker",
+        "Cord maker",
+        "Twine maker",
+        "Fiber rope maker"
+    ],
+    "Peat cutting": [
+        "Peat cutter",
+        "Turf digger",
+        "Peat harvester",
+        "Fuel brick maker"
+    ],
+    "Domestic service": [
+        "House servant",
+        "Chambermaid",
+        "Butler",
+        "Cook's assistant"
+    ],
+    "Animal husbandry": [
+        "Cattle rancher",
+        "Horse breeder",
+        "Poultry farmer",
+        "Pig farmer"
+    ],
+    "Soap making": [
+        "Soap maker",
+        "Lye soap producer",
+        "Herbal soap maker",
+        "Animal fat soap maker"
+    ],
+    "Candle making": [
+        "Candle maker",
+        "Beeswax candle maker",
+        "Tallow candle maker",
+        "Paraffin wax candle maker"
+    ],
+    "Charcoal burning": [
+        "Charcoal burner",
+        "Coal worker",
+        "Charcoal kiln operator",
+        "Fuel supplier"
+    ],
+    "Sackcloth making": [
+        "Sackcloth weaver",
+        "Burlap maker",
+        "Hessian cloth maker",
+        "Canvas worker"
+    ],
+    "Field hand work": [
+        "Field worker",
+        "Farm laborer",
+        "Crop harvester",
+        "Farmhand"
+    ],
+    "Chimney sweeping": [
+        "Chimney sweep",
+        "Flue cleaner",
+        "Soot remover",
+        "Fireplace maintenance worker"
+    ],
+    "Rug making": [
+        "Rug weaver",
+        "Carpet maker",
+        "Textile worker",
+        "Mat maker"
+    ],
+    "Grave digging": [
+        "Grave digger",
+        "Cemetery worker"
+    ],
+    "Pottery": [
+        "Potter",
+        "Ceramics artist",
+        "Clay sculptor"
+    ]
+}
