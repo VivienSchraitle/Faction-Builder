@@ -17,6 +17,7 @@ public static class DataManager
     public static string[] FactionDomainsReligious;
     public static string[] FactionGoals;
     public static string[] Virtues;
+    public static Dictionary<string, List<string>> SuperJobMappings;
     public static Dictionary<string, List<string>> HighJobMappings;
     public static Dictionary<string, List<string>> MidJobMappings;
     public static Dictionary<string, List<string>> LowJobMappings;
@@ -44,6 +45,7 @@ public static class DataManager
     public static string[] DefaultEyeColor;
     public static string[] AdjectiveSizes;
     public static string[] Classes;
+    public static string[] Success;
 
     public static List<Ancestry> Ancestries = new();
     public static List<Heritage> Heritages = new();
@@ -108,6 +110,8 @@ public static class DataManager
                 Virtues = JsonSerializer.Deserialize<string[]>(File.ReadAllText(Path.Combine(path, "JSONs", "Faction", "Virtues.JSON")));
             if (File.Exists(Path.Combine(path, "JSONs", "Faction", "Goals.JSON")))
                 FactionGoals = JsonSerializer.Deserialize<string[]>(File.ReadAllText(Path.Combine(path, "JSONs", "Faction", "Goals.JSON")));
+            if (File.Exists(Path.Combine(path, "JSONs", "Faction", "SuperJobMappings.JSON")))
+                HighJobMappings = JsonSerializer.Deserialize<Dictionary<string, List<string>>>(File.ReadAllText(Path.Combine(path, "JSONs", "Faction", "SuperJobMappings.JSON")));
             if (File.Exists(Path.Combine(path, "JSONs", "Faction", "HighFinances.JSON")))
                 HighJobMappings = JsonSerializer.Deserialize<Dictionary<string, List<string>>>(File.ReadAllText(Path.Combine(path, "JSONs", "Faction", "HighFinances.JSON")));
             if (File.Exists(Path.Combine(path, "JSONs", "Faction", "MidFinances.JSON")))
@@ -171,6 +175,8 @@ public static class DataManager
             LoadHeritages(Path.Combine(path, "JSONs", "People", "Heriatage.JSON"));
         if (File.Exists(Path.Combine(path, "JSONs", "People", "Classes.JSON")))
             Classes = JsonSerializer.Deserialize<string[]>(File.ReadAllText(Path.Combine(path, "JSONs", "People", "Classes.JSON")));
+        if (File.Exists(Path.Combine(path, "JSONs", "People", "Success.JSON")))
+            Success = JsonSerializer.Deserialize<string[]>(File.ReadAllText(Path.Combine(path, "JSONs", "People", "Success.JSON")));
 
         }
         catch (JsonException ex)

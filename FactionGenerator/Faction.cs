@@ -16,6 +16,7 @@ public class Faction
     public DataManager.Heritage primHeritage;
     public DataManager.Ancestry primAncestry;
     public int primPercent;
+    public int assignedLeaders;
     public DataManager.Heritage secHeritage;
     public DataManager.Ancestry secAncestry;
     public int secPercent;
@@ -28,7 +29,7 @@ public class Faction
     public string? JoinRitual { get; private set; }
 
     // Power parameters as an array of strings
-    public string[]? PowerParameters { get; private set; }
+    public string? PowerParameters { get; private set; }
 
     // Values as an array of strings
     public string[]? Values { get; private set; }
@@ -42,6 +43,8 @@ public class Faction
     // Standings as an array of strings
     public string[]? StandingsArray { get; private set; }
 
+    public string PowerType;
+    public string VotingSystem;
     private Random rnd = new();
 
     public Faction(int scale, int money, int magic, int military, int religious, int reputation,int pPercent, int sPercent, int intensity, string primHeri, string secoHeri)
@@ -151,7 +154,7 @@ public class Faction
         // Set Power Parameters
         PowerParameters = DeterminePowerParameters();
 
-        return styleDescription + Leadership + "\n" + JoinRitual + "\n" + string.Join(", ", PowerParameters);
+        return styleDescription + Leadership + "\n" + JoinRitual + "\n" +  PowerParameters;
     }
 
     private string DetermineLeadership()
@@ -161,30 +164,45 @@ public class Faction
         {
             if (rndScore < 25)
                 return DataManager.SourceOfPower[0]; // Anarchistic
-            if (rndScore <= 58)
+            if (rndScore <= 58){
+                assignedLeaders = rnd.Next(5, SizeScale*4); 
                 return DataManager.SourceOfPower[1]; // Democratic
-            if (rndScore <= 90)
-                return DataManager.SourceOfPower[2]; // Oligarchic
+            }
+            if (rndScore <= 90){
+                assignedLeaders = rnd.Next(3,SizeScale/5);
+                return DataManager.SourceOfPower[2];
+                } // Oligarchic
+            assignedLeaders = 1;
             return DataManager.SourceOfPower[3];     // Autocratic
         }
         else if (IntensityScore == 2)
         {
             if (rndScore < 10)
                 return DataManager.SourceOfPower[0]; // Anarchistic
-            if (rndScore <= 40)
+            if (rndScore <= 40){
+                assignedLeaders = rnd.Next(5, SizeScale*4); 
                 return DataManager.SourceOfPower[1]; // Democratic
-            if (rndScore <= 80)
-                return DataManager.SourceOfPower[2]; // Oligarchic
+            }// Democratic
+            if (rndScore <= 80){
+                assignedLeaders = rnd.Next(3,SizeScale/5);
+                return DataManager.SourceOfPower[2];
+                }// Oligarchic
+            assignedLeaders = 1;
             return DataManager.SourceOfPower[3];     // Autocratic
         }
         else
         {
             if (rndScore < 5)
                 return DataManager.SourceOfPower[0]; // Anarchistic
-            if (rndScore <= 30)
+            if (rndScore <= 30){
+                assignedLeaders = rnd.Next(5, SizeScale*4); 
                 return DataManager.SourceOfPower[1]; // Democratic
-            if (rndScore <= 60)
-                return DataManager.SourceOfPower[2]; // Oligarchic
+            } // Democratic
+            if (rndScore <= 60){
+                assignedLeaders = rnd.Next(3,SizeScale/5);
+                return DataManager.SourceOfPower[2];
+                } // Oligarchic
+            assignedLeaders = 1;
             return DataManager.SourceOfPower[3];     // Autocratic
         }
     }
@@ -214,9 +232,9 @@ public class Faction
         return null; // Just to satisfy the compiler; it will never reach here.
     }
 
-    private string[] DeterminePowerParameters()
+    private string DeterminePowerParameters()
     {
-        string[] powerParameters = new string[3];
+        string powerParameters = "";
         int helper = Leadership switch
         {
             "Anarchistic" => -1,
@@ -227,16 +245,20 @@ public class Faction
         };
 
         if (helper == 0)
-            powerParameters[0] = "The faction is led by a democratic voting system in a " + DataManager.VotingType[rnd.NextInt64(DataManager.VotingType.Length)] + " manner.";
+            {   PowerType = DataManager.VotingType[rnd.NextInt64(DataManager.VotingType.Length)];
+                VotingSystem = DataManager.OliDemoVotingResults[rnd.NextInt64(DataManager.OliDemoVotingResults.Length)];
+                powerParameters = "The faction is led by a democratic voting system in a " + PowerType + " manner. The democracy functions over" + VotingSystem + ".";}
         else if (helper == 1)
-            powerParameters[0] = "The faction is led by an oligarchy, granting voting rights to the " + DataManager.OliType[rnd.NextInt64(DataManager.OliType.Length)] + ".";
+            {   PowerType = DataManager.OliType[rnd.NextInt64(DataManager.OliType.Length)];
+                VotingSystem = DataManager.OliDemoVotingResults[rnd.NextInt64(DataManager.OliDemoVotingResults.Length)];
+                powerParameters = "The faction is led by an oligarchy, granting voting rights to the " + PowerType + ". The oligarvchy functions over" + VotingSystem + ".";}
         else if (helper == 2)
-            powerParameters[0] = "The faction is led by an autocracy, and leadership is determined by " + DataManager.AutocracyType[rnd.NextInt64(DataManager.AutocracyType.Length)] + ".";
+            {   PowerType = DataManager.AutocracyType[rnd.NextInt64(DataManager.AutocracyType.Length)];
+                powerParameters = "The faction is led by an autocracy, and leader is put in power by" + PowerType + ".";}
         else if (helper == -1)
-            powerParameters[0] = "The faction is an Anarchistic communion.";
+            {powerParameters = "The faction is an Anarchistic communion.";}
 
         // Add further detail to the power structure, if needed
-        powerParameters[1] = DataManager.OliDemoVotingResults[rnd.NextInt64(DataManager.OliDemoVotingResults.Length)];
 
         return powerParameters;
     }
@@ -254,6 +276,7 @@ public class Faction
         MoneySources.Add("Low", new List<string>());
         MoneySources.Add("Mid", new List<string>());
         MoneySources.Add("High", new List<string>());
+        MoneySources.Add("Insane", new List<string>());
 
         string values = "Their values are: \n";
         string money = "They finance themselves by: \n";
@@ -268,7 +291,7 @@ public class Faction
         for (int i = 0; i < moneyCount; i++)
         {
             int rndScore = rnd.Next(101);
-            int finances = rndScore + 3 * FinanceScore - reducer * 7;
+            int finances = rndScore + 3 * FinanceScore - reducer * 7; //max is 400
 
             string randomJob;
             string jobCategory;
@@ -277,16 +300,23 @@ public class Faction
                 jobCategory = "Low";
                 randomJob = GetWeightedRandomGeneralJob(DataManager.LowJobMappings);
             }
-            else if (finances < 270)
+            else if (finances < 200)
             {
                 jobCategory = "Mid";
                 randomJob = GetWeightedRandomGeneralJob(DataManager.MidJobMappings);
             }
-            else
+            else if (finances < 350)
             {
                 jobCategory = "High";
                 randomJob = GetWeightedRandomGeneralJob(DataManager.HighJobMappings);
                 reducer += 1;
+            }
+            else
+            {
+                jobCategory = "Insane";
+                randomJob = GetWeightedRandomGeneralJob(DataManager.SuperJobMappings);
+                reducer += 5;
+                i = i+2;
             }
 
             // Add the job to the value array for the corresponding jobCategory key in MoneySources
