@@ -50,7 +50,7 @@ public static class DataManager
     public static List<Ancestry> Ancestries = new();
     public static List<Heritage> Heritages = new();
 
-    public struct Ancestry
+    public struct Ancestry 
     {
         public string Name;
         public int LH;

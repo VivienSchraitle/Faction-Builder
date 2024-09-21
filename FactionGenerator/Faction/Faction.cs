@@ -3,9 +3,13 @@ using System;
 using System.Collections.Generic;
 using System.Configuration.Assemblies;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 
 public class Faction
 {
+    /// <summary>
+    /// defining scores for faction generation
+    /// </summary>
     public int MagicScore { get; private set; }
     public int IntensityScore { get; private set; }
     public int SizeScale { get; private set; }
@@ -13,18 +17,31 @@ public class Faction
     public int FinanceScore { get; private set; }
     public int ReputationScore { get; private set; }
     public int ReligionScore { get; private set; }
+
+
+
+    /// <summary>
+    /// definign scores for person generaton
+    /// </summary>
+
+    public int primPercent;
+    public int secPercent;
     public DataManager.Heritage primHeritage;
     public DataManager.Ancestry primAncestry;
-    public int primPercent;
+
     public int assignedLeaders;
     public DataManager.Heritage secHeritage;
     public DataManager.Ancestry secAncestry;
-    public int secPercent;
+
+    /// <summary>
+    ///generated values for faction design
+    /// </summary>
+    public string FacName;
     public string[]? GoalsArray { get; private set; }
     public string[]? DomainsArray { get; private set; }
+
     // Leadership style as a single string
     public string? Leadership { get; private set; }
-
     // Join ritual as a single string
     public string? JoinRitual { get; private set; }
 
@@ -45,6 +62,10 @@ public class Faction
 
     public string PowerType;
     public string VotingSystem;
+
+    /// <summary>
+    /// a random for some spice in generation add seed here
+    /// </summary>
     private Random rnd = new();
 
     public Faction(int scale, int money, int magic, int military, int religious, int reputation,int pPercent, int sPercent, int intensity, string primHeri, string secoHeri)
@@ -87,7 +108,7 @@ public class Faction
 
         name += DataManager.Attribute[rnd.NextInt64(DataManager.Attribute.Length)] + " ";
         name += DataManager.MainName[rnd.NextInt64(DataManager.MainName.Length)];
-
+        FacName = name;
         return name;
     }
 
