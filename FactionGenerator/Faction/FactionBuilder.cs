@@ -21,8 +21,18 @@ public class FactionBuilder
     {
         primeHeritage = inputParts[inputParts.Length - 1];
         inputParts = inputParts.Take(inputParts.Count() - 1).ToArray();
+        if(primeHeritage == "Mixed" || primeHeritage == "Random")
+        {
+            primeHeritage = "Human";
+        }
+
         secondHeritage = inputParts[inputParts.Length - 1];
         inputParts = inputParts.Take(inputParts.Count() - 1).ToArray();
+
+        if(secondHeritage == "Mixed" || secondHeritage == "Random")
+        {
+            secondHeritage = "Human";
+        }
         if (inputParts == null || inputParts.Length != numParameters)
         {
             GenerateRandomValues();
@@ -68,6 +78,8 @@ public class FactionBuilder
         outputFile.WriteLine(domains + "\n");
         outputFile.WriteLine(style + "\n");
         outputFile.WriteLine(parameters + "\n");
+        //People populator = new();
+        //populator.PopulateFaction(myFaction);
     }
 
     private bool ValidateParameters(string[] inputParts)
@@ -89,19 +101,19 @@ public class FactionBuilder
     }
 
     private void GenerateRandomValues()
+{
+    parts = new string[numParameters];
+    for (int i = 0; i < numParameters - 1; i++)
     {
-        parts = new string[numParameters];
-        for (int i = 0; i < numParameters - 1; i++)
-        {
-            parts[i] = rnd.Next(0, 101).ToString();
-        }
-        parts[numParameters - 1] = rnd.Next(1, 6).ToString();
+        parts[i] = rnd.Next(0, 101).ToString();
     }
+    parts[numParameters - 1] = rnd.Next(1, 7).ToString(); // Generate between 1 and 6
+}
     private string GetRandomValueForParameter(int index)
     {
         if (index < numParameters - 1)
         {
-            return rnd.Next(0, 101).ToString();
+            return rnd.Next(1, 101).ToString();
         }
         else if (index == numParameters - 1)
         {
@@ -113,12 +125,12 @@ public class FactionBuilder
         }
     }
     private void UpdateFactionData()
-    {
-        name = myFaction.GetName();
-        goals = myFaction.GetGoals();
-        domains = myFaction.GetDomains();
-        style = myFaction.GetStyle();
-        parameters = myFaction.GetParameters();
-        standing = myFaction.GetStandings();
-    }
+{
+    name = myFaction.GetName() ?? "Unknown Name";
+    goals = myFaction.GetGoals() ?? "Unknown Goals";
+    domains = myFaction.GetDomains() ?? "Unknown Domains";
+    style = myFaction.GetStyle() ?? "Unknown Style";
+    parameters = myFaction.GetParameters() ?? "Unknown Parameters";
+    standing = myFaction.GetStandings() ?? "Unknown Standing";
+}
 }

@@ -1,41 +1,23 @@
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using FactionGenerator.WorldStructure;
 
 namespace FactionGenerator
 {
-public class Biome
-{
-   private Random random;
-    public string Name { get; private set; }
-    public List<Modifier> Modifiers { get; private set; }
-
-    public List<LocalRegion> LocalRegions { get; private set; }
-
-    public void init(string name, List<LocalRegion> localRegions)
+    public class Biome : WorldEntity
     {
-        Name = name;
-        LocalRegions = localRegions;
+        public WorldDataManager.BiomeData biomeData;
+        public List<LocalRegion> LocalRegions { get; private set; }
 
-        foreach (var region in LocalRegions)
+        public void Init(string name, List<LocalRegion> localRegions)
         {
-            region.InheritModifiers(Modifiers, random);
-            region.ApplyAdjustments();
+            Name = name;
+            LocalRegions = localRegions;
+
+            foreach (var region in LocalRegions)
+            {
+                region.InheritModifiers(Modifiers);
+                region.ApplyAdjustments();
+            }
         }
     }
-
-    public void InheritModifiers(List<Modifier> upperModifiers, Random rnd)
-    {
-        random = rnd;
-        Modifiers = upperModifiers;
-    }
-    public void ApplyAdjustments()
-    {
-        foreach(Modifier mod in Modifiers)
-        {
-            mod.Adjust(random);
-        }
-    }
-}
 }

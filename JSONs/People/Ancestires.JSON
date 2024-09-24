@@ -299,7 +299,7 @@
         "CertainSpecialTraits": [
             []
         ],
-        "Heriatage": [],
+        "Heriatage": ["Chameleon Gnome", "Fey-touched Gnome", "Sensate Gnome", "Umbral Gnome", "Vivacious Gnome", "Wellspring Gnome"],
         "MaxAge": 350,
         "MatureAge": 18
     },
@@ -342,7 +342,7 @@
         "CertainSpecialTraits": [
             ["Massively Oversized Head"],["Stumpy"],["Scrawny Limbs"],["{AdjectiveSizes} sharply pointy ears"]
         ],
-        "Heriatage": [],
+        "Heriatage": ["Charhide Goblin", "Irongut Goblin", "Razortooth Goblin", "Snow Goblin", "Tailed Goblin", "Treedweller Goblin", "Unbreakable Goblin"],
         "MaxAge": 60,
         "MatureAge": 5
     },
@@ -372,7 +372,7 @@
         "CertainSpecialTraits": [
             []
         ],
-        "Heriatage": [],
+        "Heriatage": ["Gutsy Halfling", "Hillock Halfling", "Jinxed Halfling", "Nomadic Halfling", "Observant Halfling", "Twilight Halfling", "Wildwood Halfling"],
         "MaxAge": 350,
         "MatureAge": 18
     },
@@ -402,7 +402,7 @@
         "CertainSpecialTraits": [
             []
         ],
-        "Heriatage": [],
+        "Heriatage": ["Badlands Orc", "Battle-Ready Orc", "Deep Orc", "Grave Orc", "Hold-Scarred Orc", "Rainfall Orc", "Winter Orc"],
         "MaxAge": 100,
         "MatureAge": 17
     },
@@ -432,7 +432,7 @@
         "CertainSpecialTraits": [
             []
         ],
-        "Heriatage": [],
+        "Heriatage": ["Cactus Leshy", "Fruit Leshy", "Fungus Leshy", "Gourd Leshy", "Leaf Leshy", "Lotus Leshy", "Pine Leshy", "Root Leshy", "Seaweed Leshy", "Vine Leshy"],
         "MaxAge": 10000,
         "MatureAge": 0
     },
@@ -462,7 +462,7 @@
         "CertainSpecialTraits": [
             []
         ],
-        "Heriatage": [],
+        "Heriatage": ["Coral Athamaru", "Hopeful Athamaru", "Kaleidoscopic Athamaru", "Quilled Athamaru"],
         "MaxAge": 260,
         "MatureAge": 20
     },
@@ -589,7 +589,7 @@
                 "Gills on Neck"
             ]
         ],
-        "Heriatage": [],
+        "Heriatage": ["Ancient Scale Azarketi", "Benthic Azarketi", "Inured Azarketi", "Mistbreath Azarketi", "Murkeyed Azarketi", "River Azarketi", "Spined Azarketi", "Tactile Azarketi", "Thalassic Azarketi"],
         "MaxAge": 120,
         "MatureAge": 20
     },

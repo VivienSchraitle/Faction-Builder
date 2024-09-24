@@ -46,6 +46,7 @@ public static class DataManager
     public static string[] AdjectiveSizes;
     public static string[] Classes;
     public static string[] Success;
+    public static Random random;
 
     public static List<Ancestry> Ancestries = new();
     public static List<Heritage> Heritages = new();
@@ -83,11 +84,14 @@ public static class DataManager
 #pragma warning disable
     static DataManager()
     {
+        random = new();
+        int seed = random.Next();
         LoadFactionData();
         LoadPeopleData();
+        random = new Random(seed.GetHashCode());
     }
 
-    private static void LoadFactionData()
+    public static void LoadFactionData()
     {
         try
         {
@@ -110,8 +114,8 @@ public static class DataManager
                 Virtues = JsonSerializer.Deserialize<string[]>(File.ReadAllText(Path.Combine(path, "JSONs", "Faction", "Virtues.JSON")));
             if (File.Exists(Path.Combine(path, "JSONs", "Faction", "Goals.JSON")))
                 FactionGoals = JsonSerializer.Deserialize<string[]>(File.ReadAllText(Path.Combine(path, "JSONs", "Faction", "Goals.JSON")));
-            if (File.Exists(Path.Combine(path, "JSONs", "Faction", "SuperJobMappings.JSON")))
-                HighJobMappings = JsonSerializer.Deserialize<Dictionary<string, List<string>>>(File.ReadAllText(Path.Combine(path, "JSONs", "Faction", "SuperJobMappings.JSON")));
+            if (File.Exists(Path.Combine(path, "JSONs", "Faction", "InsaneFinances.JSON")))
+                SuperJobMappings = JsonSerializer.Deserialize<Dictionary<string, List<string>>>(File.ReadAllText(Path.Combine(path, "JSONs", "Faction", "InsaneFinances.JSON")));
             if (File.Exists(Path.Combine(path, "JSONs", "Faction", "HighFinances.JSON")))
                 HighJobMappings = JsonSerializer.Deserialize<Dictionary<string, List<string>>>(File.ReadAllText(Path.Combine(path, "JSONs", "Faction", "HighFinances.JSON")));
             if (File.Exists(Path.Combine(path, "JSONs", "Faction", "MidFinances.JSON")))
@@ -163,7 +167,7 @@ public static class DataManager
         }
     }
 
-    private static void LoadPeopleData()
+    public static void LoadPeopleData()
     {
         try
         {
@@ -372,6 +376,9 @@ public static class DataManager
         }
         return values;
     }
+
+
+
 }
 
 public static class JsonElementExtensions

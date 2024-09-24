@@ -1,42 +1,22 @@
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using FactionGenerator.WorldStructure;
 
 namespace FactionGenerator
 {
-public class VegetationZone
-{
-   private Random random;
-    public string Name { get; private set; }
-    public List<Modifier> Modifiers { get; private set; }
-
-    public List<Biome> Biomes { get; private set; }
-
-    public void init(string name, List<Biome> biomes)
+    public class VegetationZone : WorldEntity
     {
-        Name = name;
-        Biomes = biomes;
+        public List<Biome> Biomes { get; private set; }
 
-
-        foreach (var biome in Biomes)
+        public void Init(string name, List<Biome> biomes)
         {
-            biome.InheritModifiers(Modifiers, random);
-            biome.ApplyAdjustments();
+            Name = name;
+            Biomes = biomes;
+
+            foreach (var biome in Biomes)
+            {
+                biome.InheritModifiers(Modifiers);
+                biome.ApplyAdjustments();
+            }
         }
     }
-
-    public void InheritModifiers(List<Modifier> upperModifiers, Random rnd)
-    {
-        random = rnd;
-        Modifiers = upperModifiers;
-    }
-    public void ApplyAdjustments()
-    {
-        foreach(Modifier mod in Modifiers)
-        {
-            mod.Adjust(random);
-        }
-    }
-}
 }

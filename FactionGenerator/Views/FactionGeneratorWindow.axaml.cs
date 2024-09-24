@@ -57,43 +57,43 @@ public partial class FactionGeneratorWindow : Window
         }
         private void RandomScale(object sender, RoutedEventArgs e)
         {
-            ScaleInput.Text = rnd.Next(0,101).ToString();
+            ScaleInput.Text = rnd.Next(1,101).ToString();
         }
         private void RandomFunds(object sender, RoutedEventArgs e)
         {
-           FundsInput.Text = rnd.Next(0,101).ToString();
+           FundsInput.Text = rnd.Next(1,101).ToString();
         }
         private void RandomMagic(object sender, RoutedEventArgs e)
         {
-             MagicInput.Text = rnd.Next(0,101).ToString();
+             MagicInput.Text = rnd.Next(1,101).ToString();
         }
         private void RandomMilitary(object sender, RoutedEventArgs e)
         {
-             MilitaryInput.Text = rnd.Next(0,101).ToString();
+             MilitaryInput.Text = rnd.Next(1,101).ToString();
         }
         private void RandomReligion(object sender, RoutedEventArgs e)
         {
-             ReligionInput.Text = rnd.Next(0,101).ToString();
+             ReligionInput.Text = rnd.Next(1,101).ToString();
         }
         private void RandomReputation(object sender, RoutedEventArgs e)
         {
-             ReputationInput.Text = rnd.Next(0,101).ToString();
+             ReputationInput.Text = rnd.Next(1,101).ToString();
         }
         private void RandomIntensity(object sender, RoutedEventArgs e)
         {
-             IntensityInput.Text = rnd.Next(0,6).ToString();
+             IntensityInput.Text = rnd.Next(1,6).ToString();
         }
         private void GenerateAllValues(object sender, RoutedEventArgs e)
         {
-            ScaleInput.Text = rnd.Next(0,101).ToString();
-            FundsInput.Text = rnd.Next(0,101).ToString();
-            MagicInput.Text = rnd.Next(0,101).ToString();
-            MilitaryInput.Text = rnd.Next(0,101).ToString();
-            ReligionInput.Text = rnd.Next(0,101).ToString();
-            ReputationInput.Text = rnd.Next(0,101).ToString();
-            PrimaryAncestryTypeChance.Text = rnd.Next(0,101).ToString();
-            SecondaryAncestryTypeChance.Text = rnd.Next(0,101).ToString();
-            IntensityInput.Text = rnd.Next(0,6).ToString();
+            ScaleInput.Text = rnd.Next(1,101).ToString();
+            FundsInput.Text = rnd.Next(1,101).ToString();
+            MagicInput.Text = rnd.Next(1,101).ToString();
+            MilitaryInput.Text = rnd.Next(1,101).ToString();
+            ReligionInput.Text = rnd.Next(1,101).ToString();
+            ReputationInput.Text = rnd.Next(1,101).ToString();
+            PrimaryAncestryTypeChance.Text = rnd.Next(1,101).ToString();
+            SecondaryAncestryTypeChance.Text = rnd.Next(1,101).ToString();
+            IntensityInput.Text = rnd.Next(1,6).ToString();
         }
 
 

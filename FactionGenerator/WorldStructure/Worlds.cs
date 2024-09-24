@@ -7,36 +7,34 @@ namespace FactionGenerator
 {
     public class Worlds
     {
-        public int seed;
         public string Name { get; private set; }
         public List<Modifier> Modifiers { get; private set; }
-
         public List<World> MyWorlds { get; private set; }
-        new Random random;
 
-        public void init(string name, int size, int magicLevel, int techLevel, int resourceLevel, int godsLevel, int outerLevel, List<World> worlds)
+        public void Init(string name, int size, int magicLevel, int techLevel, int resourceLevel, int godsLevel, int outerBeingsLevel, int amountWorlds)
         {
             Name = name;
+            Modifiers = new List<Modifier>();
+
+            // Add base-level modifiers for the entire world set
             Modifiers.Add(new Modifier("Size", size));
             Modifiers.Add(new Modifier("Magic", magicLevel, (int)(magicLevel * 0.2f)));
             Modifiers.Add(new Modifier("Technology", techLevel, (int)(techLevel * 0.2f)));
             Modifiers.Add(new Modifier("Resources", resourceLevel, (int)(resourceLevel * 0.2f)));
             Modifiers.Add(new Modifier("Deities", godsLevel));
-            Modifiers.Add(new Modifier("OuterBeings", outerLevel));
-            MyWorlds = worlds;
+            Modifiers.Add(new Modifier("OuterBeings", outerBeingsLevel));
 
-            // Pass down base modifiers to each World
-            foreach (var world in MyWorlds)
+            // Initialize the list of worlds
+            MyWorlds = new List<World>();
+
+            for (int i = 0; i < amountWorlds; i++)
             {
-                world.InheritModifiers(Modifiers, random);
-                world.ApplyAdjustments();
-                world.init();
+                var world = new World();
+                world.InheritModifiers(Modifiers);  // Each world inherits the base modifiers
+                world.Init();                       // Now, the world generates its data based on the inherited modifiers
+                world.ApplyAdjustments();           // Apply final adjustments after initialization
+                MyWorlds.Add(world);                // Add the world to the list
             }
-        }
-        public void init(int seed)
-        {
-            random = new Random(seed.GetHashCode());
         }
     }
 }
-

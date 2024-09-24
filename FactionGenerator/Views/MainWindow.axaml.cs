@@ -10,6 +10,8 @@ namespace FactionGenerator.Views
         public MainWindow()
         {
             InitializeComponent();
+            DataManager.LoadFactionData();
+            DataManager.LoadPeopleData();
         }
 
         private void StartFactionGenerationClick(object sender, RoutedEventArgs e)
