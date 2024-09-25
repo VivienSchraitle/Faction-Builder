@@ -78,8 +78,8 @@ public class FactionBuilder
         outputFile.WriteLine(domains + "\n");
         outputFile.WriteLine(style + "\n");
         outputFile.WriteLine(parameters + "\n");
-        //People populator = new();
-        //populator.PopulateFaction(myFaction);
+        People populator = new();
+        populator.PopulateFaction(myFaction);
     }
 
     private bool ValidateParameters(string[] inputParts)

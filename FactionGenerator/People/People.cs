@@ -45,8 +45,7 @@ public class People
         _localFaction = myFaction;
 
         // Create the base faction folder
-        string fullPath = Path.GetFullPath(@"Generated Factions");
-        string factionDir = Directory.CreateDirectory(Path.Combine(fullPath, myFaction.FacName, "Members")).ToString();
+        
 
         // List to store faction people
         List<Person> factionPeople = new();
@@ -57,46 +56,43 @@ public class People
             factionPeople = GenerateFactionLeaders();
 
             // Create the leaders folder inside the faction folder
-            string leadersDir = Directory.CreateDirectory(Path.Combine(fullPath, myFaction.FacName, "Leaders")).ToString();
 
             for (int i = 0; i < factionPeople.Count; i++) // Fixed the loop condition
             {
                 Person leader = factionPeople.ElementAt(i);
-
-                // Create a markdown file for each leader in the "Leaders" folder
-                using StreamWriter outputFile = new StreamWriter(Path.Combine(leadersDir, leader.Name + ".md"));
-                outputFile.WriteLine(leader.Name);
-                outputFile.WriteLine("Age: " + leader.Age);
-                outputFile.WriteLine("Height: " + leader.Size);
-                outputFile.WriteLine("Job: " + leader.MyJob);
-                outputFile.WriteLine("Class: " + (leader.MyClass ?? "None"));
-                outputFile.WriteLine("Skin: " + leader.SkinColor + " with " + leader.Undertones);
-                outputFile.WriteLine("Hair: " + leader.HairColor + " Hair in a " + leader.Hairstyle);
-                outputFile.WriteLine("Eyes: " + leader.EyeColor);
-                outputFile.WriteLine("Special Traits: " + string.Join(", ", leader.SpecialTraits));
+                writePerson(leader, "Leader");               
             }
         }
-
-        // Reset factionPeople list for regular members
-        factionPeople = new List<Person>();
 
         // Populate faction members based on SizeScale
         for (int i = 0; i < _localFaction.SizeScale; i++) // Fixed the loop condition
         {
-            Person member = factionPeople.ElementAt(i);
-
-            // Create a markdown file for each member in the "Members" folder
-            using StreamWriter outputFile = new StreamWriter(Path.Combine(factionDir, member.Name + ".md"));
-            outputFile.WriteLine(member.Name);
-            outputFile.WriteLine("Age: " + member.Age);
-            outputFile.WriteLine("Height: " + member.Size);
-            outputFile.WriteLine("Job: " + member.MyJob);
-            outputFile.WriteLine("Class: " + (member.MyClass ?? "None"));
-            outputFile.WriteLine("Skin: " + member.SkinColor + " with " + member.Undertones);
-            outputFile.WriteLine("Hair: " + member.HairColor + " Hair in a " + member.Hairstyle);
-            outputFile.WriteLine("Eyes: " + member.EyeColor);
-            outputFile.WriteLine("Special Traits: " + string.Join(", ", member.SpecialTraits));
+            Person member = new();
+            member = GeneratePerson();
+            writePerson(member, "Member");
+            
         }
+    }
+    public void writePerson(Person pepo, string stance)
+    {
+        string fullPath = Path.GetFullPath(@"Generated Factions");
+        string factionDir = Directory.CreateDirectory(Path.Combine(fullPath, _localFaction.FacName, stance)).ToString();
+        using StreamWriter outputFile = new StreamWriter(Path.Combine(factionDir, pepo.Name + ".md"));
+                outputFile.WriteLine(pepo.Name);
+                if(!pepo.Ancestry.Name.Equals(pepo.Heritage.Name))
+                outputFile.WriteLine(pepo.Ancestry.Name + " " + pepo.Heritage.Name);
+                else
+                outputFile.WriteLine(pepo.Ancestry.Name);
+                outputFile.WriteLine();
+                outputFile.WriteLine("Age: " + pepo.Age);
+                outputFile.WriteLine("Height: " + pepo.Size);
+                outputFile.WriteLine("Job: " + pepo.MyJob);
+                outputFile.WriteLine("Class: " + (pepo.MyClass ?? "None"));
+                outputFile.WriteLine("Skin: " + pepo.SkinColor + " with " + pepo.Undertones);
+                outputFile.WriteLine("Hair: " + pepo.HairColor + " Hair in a " + pepo.Hairstyle);
+                outputFile.WriteLine("Eyes: " + pepo.EyeColor);
+                if(pepo.SpecialTraits != null)
+                outputFile.WriteLine("Special Traits: " + string.Join(", ", pepo.SpecialTraits));
     }
 
     public void AddSinglePerson()
@@ -132,7 +128,7 @@ public class People
     {
         Person person = new();
         person.myFaction = _localFaction;
-
+        GetName(person);
 
 
         if (!string.IsNullOrEmpty(position) && !string.IsNullOrEmpty(type))
@@ -170,6 +166,15 @@ public class People
             GetAncestry(person);
             GetHeritage(person);
         }
+        else
+        {
+            // todo use the faction data for this
+            GetAncestry(person);
+            GetHeritage(person);
+        }
+        SetAppearance(person);
+        GetClass(person);
+
         return person;
     }
     public Person GenerateUnafiliatedPerson()
@@ -180,6 +185,7 @@ public class People
         person.ReputationScore = _random.Next(0, 100);
         GetNonFactionJob(person);
         GetAncestry(person);
+        GetClass(person);
         GetHeritage(person);
         GetName(person);
         SetAppearance(person);
@@ -346,19 +352,20 @@ public class People
         person.Size = person.Ancestry.SizeAvg + _random.Next((int)(person.Ancestry.SizeDev * 10)) / 10;
     }
     public string[] GetSingleElementFromEachArray(string[][] certainSpecialTraits)
-    {
-        return certainSpecialTraits
-            .Where(traitArray => traitArray.Length > 0)  // Ensure non-empty arrays
-            .Select(traitArray => traitArray[_random.Next(traitArray.Length)])  // Select a random element from each array
-            .ToArray();
-    }
-    public string[] GetSingleElementFromEachArrayOptional(string[][] optionalSpecialTraits)
-    {
-        return optionalSpecialTraits
-            .Where(traitArray => traitArray.Length > 0 && _random.Next(101) > 30)  // Ensure non-empty arrays
-            .Select(traitArray => traitArray[_random.Next(traitArray.Length)])  // Select a random element from each array
-            .ToArray();
-    }
+{
+    return certainSpecialTraits
+        .Where(traitArray => traitArray != null && traitArray.Length > 0)  // Ensure non-empty arrays
+        .Select(traitArray => traitArray[_random.Next(traitArray.Length)])  // Select a random element from each array
+        .ToArray();
+}
+
+public string[] GetSingleElementFromEachArrayOptional(string[][] optionalSpecialTraits)
+{
+    return optionalSpecialTraits
+        .Where(traitArray => traitArray != null && traitArray.Length > 0 && _random.Next(101) > 30)  // Ensure non-empty arrays
+        .Select(traitArray => traitArray[_random.Next(traitArray.Length)])  // Select a random element from each array
+        .ToArray();
+}
     public string GetName(Person pepe)
     {
         pepe.Name = Guid.NewGuid().ToString() + Guid.NewGuid().ToString() + Guid.NewGuid().ToString();
